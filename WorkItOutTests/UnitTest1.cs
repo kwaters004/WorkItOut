@@ -7,13 +7,14 @@ namespace WorkItOutTests
 	public class UnitTest1
 	{
 		[Fact]
-		public void Test1()
+		public void AddFavoriteTest()
 		{
 			Favorites fave = new Favorites();
 			fave.exerciseId = 3;
 			DAL.AddFavorite(fave);
+			// may want to add something in the DAL that will only add
+			// favorite if it's not already on the list
 		}
-
 
 	}
 }

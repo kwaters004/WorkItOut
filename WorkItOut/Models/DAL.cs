@@ -34,6 +34,7 @@ namespace WorkItOut.Models
 			db.Insert(fave);
 		}
 
+
 		public static void AddUser(User user){
 			db.Insert(user);
 		}
