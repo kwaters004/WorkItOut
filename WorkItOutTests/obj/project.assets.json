@@ -3505,23 +3505,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kwaters\\.nuget\\packages\\": {},
+    "C:\\Users\\vphillips\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kwaters\\dev\\WorkItOut\\WorkItOutTests\\WorkItOutTests.csproj",
+      "projectUniqueName": "C:\\Users\\vphillips\\dev\\WorkItOut\\WorkItOutTests\\WorkItOutTests.csproj",
       "projectName": "WorkItOutTests",
-      "projectPath": "C:\\Users\\kwaters\\dev\\WorkItOut\\WorkItOutTests\\WorkItOutTests.csproj",
-      "packagesPath": "C:\\Users\\kwaters\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kwaters\\dev\\WorkItOut\\WorkItOutTests\\obj\\",
+      "projectPath": "C:\\Users\\vphillips\\dev\\WorkItOut\\WorkItOutTests\\WorkItOutTests.csproj",
+      "packagesPath": "C:\\Users\\vphillips\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vphillips\\dev\\WorkItOut\\WorkItOutTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\kwaters\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vphillips\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
