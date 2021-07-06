@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kwaters\\dev\\WorkItOut\\WorkItOutTests\\WorkItOutTests.csproj": {}
+    "C:\\Users\\MMORRIS3\\source\\repos\\Final\\WorkItOutTests\\WorkItOutTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kwaters\\dev\\WorkItOut\\WorkItOutTests\\WorkItOutTests.csproj": {
+    "C:\\Users\\MMORRIS3\\source\\repos\\Final\\WorkItOutTests\\WorkItOutTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kwaters\\dev\\WorkItOut\\WorkItOutTests\\WorkItOutTests.csproj",
+        "projectUniqueName": "C:\\Users\\MMORRIS3\\source\\repos\\Final\\WorkItOutTests\\WorkItOutTests.csproj",
         "projectName": "WorkItOutTests",
-        "projectPath": "C:\\Users\\kwaters\\dev\\WorkItOut\\WorkItOutTests\\WorkItOutTests.csproj",
-        "packagesPath": "C:\\Users\\kwaters\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kwaters\\dev\\WorkItOut\\WorkItOutTests\\obj\\",
+        "projectPath": "C:\\Users\\MMORRIS3\\source\\repos\\Final\\WorkItOutTests\\WorkItOutTests.csproj",
+        "packagesPath": "C:\\Users\\MMORRIS3\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MMORRIS3\\source\\repos\\Final\\WorkItOutTests\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\kwaters\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\MMORRIS3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -32,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\kwaters\\dev\\WorkItOut\\WorkItOut\\WorkItOut.csproj": {
-                "projectPath": "C:\\Users\\kwaters\\dev\\WorkItOut\\WorkItOut\\WorkItOut.csproj"
+              "C:\\Users\\MMORRIS3\\source\\repos\\Final\\WorkItOut\\WorkItOut.csproj": {
+                "projectPath": "C:\\Users\\MMORRIS3\\source\\repos\\Final\\WorkItOut\\WorkItOut.csproj"
               }
             }
           }
@@ -84,22 +80,18 @@
         }
       }
     },
-    "C:\\Users\\kwaters\\dev\\WorkItOut\\WorkItOut\\WorkItOut.csproj": {
+    "C:\\Users\\MMORRIS3\\source\\repos\\Final\\WorkItOut\\WorkItOut.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kwaters\\dev\\WorkItOut\\WorkItOut\\WorkItOut.csproj",
+        "projectUniqueName": "C:\\Users\\MMORRIS3\\source\\repos\\Final\\WorkItOut\\WorkItOut.csproj",
         "projectName": "WorkItOut",
-        "projectPath": "C:\\Users\\kwaters\\dev\\WorkItOut\\WorkItOut\\WorkItOut.csproj",
-        "packagesPath": "C:\\Users\\kwaters\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kwaters\\dev\\WorkItOut\\WorkItOut\\obj\\",
+        "projectPath": "C:\\Users\\MMORRIS3\\source\\repos\\Final\\WorkItOut\\WorkItOut.csproj",
+        "packagesPath": "C:\\Users\\MMORRIS3\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MMORRIS3\\source\\repos\\Final\\WorkItOut\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\kwaters\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\MMORRIS3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
