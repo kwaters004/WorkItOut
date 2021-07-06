@@ -1,5 +1,6 @@
 using System;
 using Xunit;
+using WorkItOut.Models;
 
 namespace WorkItOutTests
 {
@@ -8,7 +9,11 @@ namespace WorkItOutTests
 		[Fact]
 		public void Test1()
 		{
-
+			Favorites fave = new Favorites();
+			fave.exerciseId = 3;
+			DAL.AddFavorite(fave);
 		}
+
+
 	}
 }
