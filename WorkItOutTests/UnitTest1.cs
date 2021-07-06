@@ -16,5 +16,11 @@ namespace WorkItOutTests
 			// favorite if it's not already on the list
 		}
 
+		[Fact]
+		public void GetFavoritesTest()
+{
+List<Favorites> faves = 
+		}
+
 	}
 }
