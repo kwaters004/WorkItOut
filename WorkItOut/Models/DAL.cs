@@ -21,18 +21,6 @@ namespace WorkItOut.Models
 		public static void AddFavorite(Favorites fave){
 			db.Insert(fave);
 		}
-		public static void AddFavorite(Favorites fave){
-			db.Insert(fave);
-		}
-				public static void AddFavorite(Favorites fave){
-			db.Insert(fave);
-		}
-				public static void AddFavorite(Favorites fave){
-			db.Insert(fave);
-		}
-				public static void AddFavorite(Favorites fave){
-			db.Insert(fave);
-		}
 
 
 		public static void AddUser(User user){
