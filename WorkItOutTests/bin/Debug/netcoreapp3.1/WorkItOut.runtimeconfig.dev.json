@@ -1,9 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\kwaters\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\kwaters\\.nuget\\packages",
-      "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
+      "C:\\Users\\MMORRIS3\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\MMORRIS3\\.nuget\\packages"
     ]
   }
 }
