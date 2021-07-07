@@ -1,6 +1,7 @@
 using System;
 using Xunit;
 using WorkItOut.Models;
+using System.Collections.Generic;
 
 namespace WorkItOutTests
 {
@@ -19,7 +20,7 @@ namespace WorkItOutTests
 		[Fact]
 		public void GetFavoritesTest()
 {
-List<Favorites> faves = 
+			List<Favorites> faves = DAL.GetFavorites();
 		}
 
 	}
