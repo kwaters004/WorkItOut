@@ -1,0 +1,22 @@
+
+<a *ngIf="sh" (click)="showHide()" class="clickedDetails">details</a>
+<a *ngIf="!sh" (click)="showHide()">details</a>
+
+<div class="workoutDetails" *ngIf="sh">
+
+	<div class="detailTitle">Recommended Reps:</div>
+	<div>{{wrkout?.recommendedReps}}</div>
+	<div class="detailTitle">Recommended Sets:</div>
+	<div>{{wrkout?.recommendedSets}}</div>
+	<div class="detailTitle">Recommended Duration:</div>
+	<div>{{wrkout?.recommendedDuration}}</div>
+	<div class="detailTitle">Equipment:</div>
+	<div>{{wrkout?.equipment}}</div>
+	<div class="detailTitle">Category:</div>
+	<div>{{wrkout?.category}}</div>
+	<div class="detailTitle">Time Exercised:</div>
+	<div>{{wrkout?.timeExercised}}</div>
+	<div class="detailTitle">Muscle Groups:</div>
+	<div>{{wrkout?.musclegroups}}</div>	
+
+	</div>

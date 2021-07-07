@@ -25,11 +25,12 @@ namespace WorkItOut.Controllers
             return true;
         }
 
-        [HttpPost("add")]
-        public void AddWorkout(Workouts work)
+        [HttpPut("add")]
+        public void AddWorkout([FromBody] Workouts work)
         {
             DAL.AddWorkout(work);
         }
+
         [HttpDelete("remove/{workoutsId}")]
         public void RemoveWorkOut(int id)
         {

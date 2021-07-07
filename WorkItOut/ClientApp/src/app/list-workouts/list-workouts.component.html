@@ -1,0 +1,9 @@
+<h2> Please review all the workouts we offer! </h2>
+
+<div *ngFor=" let workout of workouts ">
+
+  {{workout.workoutname}} 
+
+  <app-workout-detail [wrkout]="workout"></app-workout-detail>
+</div>
+
