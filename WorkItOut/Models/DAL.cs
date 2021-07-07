@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
 using Dapper.Contrib.Extensions;
-
+using Dapper;
 using MySql.Data.MySqlClient;
 
 namespace WorkItOut.Models
