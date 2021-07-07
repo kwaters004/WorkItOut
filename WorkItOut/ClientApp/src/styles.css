@@ -9,8 +9,34 @@ code {
   color: #e01a76;
 }
 
+body{
+background-color: lightpink;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+
+.workoutDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: white;
+width: 40%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.detailTitle{
+    font-weight: bold;
+}
+
+.clickedDetails{
+filter: drop-shadow(2px 2px 2px purple);
+}
+
+
+
+
