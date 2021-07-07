@@ -13,7 +13,7 @@ namespace WorkItOut.Models
         [Key]
         public int workoutsId { get; set; }
         public int recommendedReps { get; set; }
-        public int recommondedSets { get; set; }
+        public int recommendedSets { get; set; }
         public int recommendedDuration { get; set; }
         public string equipment { get; set; }
         public string category { get; set; }
