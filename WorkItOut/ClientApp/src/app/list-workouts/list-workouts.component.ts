@@ -10,10 +10,23 @@ import { WorkoutapiService } from '../workoutapi.service';
 export class ListWorkoutsComponent {
 /** list-workouts ctor */
 
-  workouts = null;
+
+
+  workouts = [
+    {
+      workoutname: 'push-up',
+      recommendedReps: '10',
+      recommendedSets: '4',
+    },
+    {
+      workoutname: 'pull-up',
+      recommendedReps: '5',
+      recommendedSets: '3',
+    }
+  ]
+
   constructor(
-    private workoutService: WorkoutapiService,
-    private thisroute: ActivatedRoute
+   
   ) {
 
       
@@ -27,7 +40,11 @@ export class ListWorkoutsComponent {
     
 
   }
-   
 
+  showDetail() {
+
+    alert('show detail');
+
+  }
 
 }

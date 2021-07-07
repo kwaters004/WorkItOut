@@ -12,6 +12,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ListWorkoutsComponent } from './list-workouts/list-workouts.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { WorkoutapiService } from './workoutapi.service';
+import { WorkoutDetailComponent } from './workout-detail/workout-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { WorkoutapiService } from './workoutapi.service';
     CounterComponent,
     FetchDataComponent,
     UserLoginComponent,
-    ListWorkoutsComponent
+    ListWorkoutsComponent,
+    WorkoutDetailComponent
 
   ],
   imports: [
