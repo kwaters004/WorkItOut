@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { WorkoutapiService } from '../workoutapi.service';
 
 @Component({
     selector: 'app-workout-detail',
@@ -13,7 +14,8 @@ export class WorkoutDetailComponent {
 
   sh: boolean = false;
 
-    constructor() {
+  constructor(
+    private workoutapi: WorkoutapiService  ) {
 
     }
 
