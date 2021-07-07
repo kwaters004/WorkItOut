@@ -4,6 +4,10 @@ namespace WorkItOut
 {
 
 	//Currently updating this file 
+// adding another comment to practice git
+// adding another comment to practice git
+// adding another comment to practice git
+// adding another comment to practice git
 	public class WeatherForecast
 	{
 		public DateTime Date { get; set; }
