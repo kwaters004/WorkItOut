@@ -11,6 +11,7 @@ namespace WorkItOut.Models
     [Table("workoutlog")]
     public class WorkoutLog
     {
+        [Key]
         public int workoutlogId { get; set; }
         public int weight { get; set; }
         public DateTime timeOfWorkout { get; set; }
