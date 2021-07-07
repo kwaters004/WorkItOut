@@ -11,31 +11,31 @@ namespace WorkItOut.Controllers
     [ApiController]
     public class WorkOutsController : ControllerBase
     {
-        // GET api/<ValuesController>/5
-        [HttpGet("GetAllWorkOuts/{id}")]
-        public List<Workouts> GetAllWorkOuts(int id)
-        {
-            return DAL.GetAllWorkouts();
-        }
-        // GET api/<ValuesController>/5
-        [HttpGet("getworkouts/{id}")]
-        public List<Workouts> GetSingleWorkOuts(int id)
-        {
-            return DAL.GetAllWorkouts();
-            //hello
-        }
-        // POST api/<ValuesController>
-        [HttpPost("add")]
-        public void AddWorkout(Workouts workout)
-        {
-            //DAL.AddWorkout(equipment, category, musclegroups)
 
+        [HttpGet("GetAllWorkOuts/{id}")]
+        public List<Workouts> GetAllWorkOuts()
+        {
+            return DAL.GetAllWorkouts();
+        }
+
+        [HttpGet("getworkouts/{id}")]
+        public bool GetSingleWorkOuts(int id)
+        {
+             DAL.GetSingleWorkouts(id);
+            return true;
+        }
+
+        [HttpPost("add")]
+        public void AddWorkout(Workouts work)
+        {
+            DAL.AddWorkout(work);
         }
         [HttpDelete("remove/{workoutsId}")]
         public void RemoveWorkOut(int id)
         {
-            //DAL.removeWorkOut(id);
-
+            DAL.RemoveWorkOut(id);
         }
+
+
     }
 }
