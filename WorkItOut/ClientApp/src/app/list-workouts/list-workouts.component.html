@@ -1,0 +1,9 @@
+<h2> Please review all the workouts we offer! </h2>
+
+<div *ngFor =" let workout of workouts ">
+
+  {{workout.category}} <button (click) ="showDetail(workout.workoutsId)">Workout Detail</button>
+
+
+</div>
+
