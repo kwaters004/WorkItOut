@@ -14,6 +14,7 @@ import { UserSignupComponent } from './user-signup/user-signup.component';
 import { WorkoutapiService } from './workoutapi.service';
 import { WorkoutDetailComponent } from './workout-detail/workout-detail.component';
 import { AddWorkoutComponent } from './add-workout/add-workout.component';
+import { WorkoutLogComponent } from './workout-log/workout-log.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AddWorkoutComponent } from './add-workout/add-workout.component';
         UserSignupComponent,
         ListWorkoutsComponent,
         WorkoutDetailComponent,
-        AddWorkoutComponent
+        AddWorkoutComponent,
+        WorkoutLogComponent
 
     ],
     imports: [
