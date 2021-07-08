@@ -1,6 +1,6 @@
 
-<a *ngIf="sh" (click)="showHide()" class="clickedDetails">details</a>
-<a *ngIf="!sh" (click)="showHide()">details</a>
+<button *ngIf="sh" (click)="showHide()" class="clickedDetails">details</button>
+<button *ngIf="!sh" (click)="showHide()">details</button>
 
 <div class="workoutDetails" *ngIf="sh">
 
@@ -17,6 +17,6 @@
 	<div class="detailTitle">Time Exercised:</div>
 	<div>{{wrkout?.timeExercised}}</div>
 	<div class="detailTitle">Muscle Groups:</div>
-	<div>{{wrkout?.musclegroups}}</div>	
+	<div>{{wrkout?.musclegroups}}</div>
 
-	</div>
+</div>

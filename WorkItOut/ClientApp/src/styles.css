@@ -27,16 +27,36 @@ background-color: lightpink;
 width: 40%;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+border-top: black solid 1px;
+padding: 10px;
+}
+
+.workoutCard {
+    background-color: white;
+    border: 3px solid white;
+    margin: 2px;
+    border-radius: 15px;
+
+}
+
+.workoutCard > label{
+font-size: 2rem;
+font-variant-caps: small-caps;
+
 }
 
 .detailTitle{
     font-weight: bold;
 }
 
-.clickedDetails{
-filter: drop-shadow(2px 2px 2px purple);
-}
+/*.clickedDetails{
 
+}*/
+
+button{
+border: none;
+margin: auto;
+}
 
 
 
