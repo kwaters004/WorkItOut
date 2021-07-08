@@ -1,33 +1,31 @@
-﻿<div>user-login </div>
-<h2>
-  User Registration
-</h2>
-<div id="userId">
-    <form>
-        <label>First Name</label>
-        <input type="text" [(ngModel)]="firstname" /><br />
+<div>user-signup Component </div>
+<div>
+    <label>First Name</label>
+    <input type="text" [(ngModel)]="signup.firstname" /><br />
 
-        <label>Last Name</label>
-        <input type="text" [(ngModel)]="lastname" /><br />
+    <label>Last Name</label>
+    <input type="text" [(ngModel)]="signup.lastname" /><br />
 
-        <label>DOB</label>
-        <input type="date" [(ngModel)]="dob" /><br />
+    <label>DOB</label>
+    <input type="date" [(ngModel)]="signup.dob" /><br />
 
-        <label>Weight</label>
-        <input type="number" [(ngModel)]="initialWeight" /><br />
+    <label>Weight</label>
+    <input type="number" [(ngModel)]="signup.initialWeight" /><br />
 
-        <label>Email</label>
-        <input type="email" [(ngModel)]="email" /><br />
+    <label>Email</label>
+    <input type="email" [(ngModel)]="signup.email" /><br />
 
-        <label>userName</label>
-        <input type="text" [(ngModel)]="userName" /><br />
+    <label>userName</label>
+    <input type="text" [(ngModel)]="signup.userName" /><br />
 
-        <label>Height</label>
-        <input type="number" [(ngModel)]="height" /><br />
+    <label>Height</label>
+    <input type="number" [(ngModel)]="signup.height" /><br />
 
-        <label>Gender</label>
-        <input type="text" [(ngModel)]="Gender" /><br />
+    <label>Gender</label>
+    <input type="text" [(ngModel)]="signup.gender" /><br />
 
-        <button (click)="AddUser()">Register</button>
-    </form>
+    <button (click)="AddUser()">Register</button>
+
+
+
 </div>
