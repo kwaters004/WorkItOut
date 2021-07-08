@@ -13,6 +13,7 @@ export class WorkoutDetailComponent {
   @Input() wrkout;
 
   sh: boolean = false;
+  shInput: boolean = false;
 
   constructor(
     private workoutapi: WorkoutapiService  ) {
@@ -23,5 +24,18 @@ export class WorkoutDetailComponent {
     if (this.sh)
     { this.sh = false; return; }
     this.sh = true;
-  }
+    }
+
+
+    showHideEdit() {
+        if (this.shInput) { this.shInput = false; return; }
+        this.shInput = true;
+    }
+
+
+    EditWorkout(workout) {
+        this.workoutapi.EditWorkout(workout);
+        this.showHideEdit();
+	}
+    
 }

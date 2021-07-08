@@ -39,7 +39,7 @@ padding: 10px;
 
 }
 
-.workoutCard > label{
+app-workout-detail > label{
 font-size: 2rem;
 font-variant-caps: small-caps;
 
@@ -58,5 +58,10 @@ border: none;
 margin: auto;
 }
 
+
+.userProfile{
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr;
+}
 
 

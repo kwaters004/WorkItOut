@@ -1,9 +1,13 @@
-
+<label *ngIf="!shInput">{{wrkout?.workoutname}}</label>
+<input *ngIf="shInput"  [(ngModel)]="wrkout.workoutname" />
 <button *ngIf="sh" (click)="showHide()" class="clickedDetails">details</button>
 <button *ngIf="!sh" (click)="showHide()">details</button>
 
 <div class="workoutDetails" *ngIf="sh">
 
+
+
+<div *ngIf="!shInput">
 	<div class="detailTitle">Recommended Reps:</div>
 	<div>{{wrkout?.recommendedReps}}</div>
 	<div class="detailTitle">Recommended Sets:</div>
@@ -18,6 +22,29 @@
 	<div>{{wrkout?.timeExercised}}</div>
 	<div class="detailTitle">Muscle Groups:</div>
 	<div>{{wrkout?.musclegroups}}</div>
+</div>
+
+
+<div *ngIf="shInput">
+	<div class="detailTitle">Recommended Reps:</div>
+	<div><input  [(ngModel)]="wrkout.recommendedReps" /></div>
+	<div class="detailTitle">Recommended Sets:</div>
+	<div><input  [(ngModel)]="wrkout.recommendedSets" /></div>
+	<div class="detailTitle">Recommended Duration:</div>
+	<div><input  [(ngModel)]="wrkout.recommendedDuration" /></div>
+	<div class="detailTitle">Equipment:</div>
+	<div><input  [(ngModel)]="wrkout.equipment" /></div>
+	<div class="detailTitle">Category:</div>
+	<div><input  [(ngModel)]="wrkout.category" /></div>
+	<div class="detailTitle">Time Exercised:</div>
+	<div><input  [(ngModel)]="wrkout.timeExercised" /></div>
+	<div class="detailTitle">Muscle Groups:</div>
+	<div><input  [(ngModel)]="wrkout.musclegroups" /></div>
+	<button (click)="EditWorkout(wrkout)">Submit</button>
+</div>
+
+<button (click)="showHideEdit()">Edit Workout</button>
+
 
 
 </div>
