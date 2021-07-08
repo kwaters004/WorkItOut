@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MySql.Data.MySqlClient;
+using System.Data;
+using WorkItOut.Models;
 
 namespace WorkItOut
 {
@@ -26,6 +29,10 @@ namespace WorkItOut
 			{
 				configuration.RootPath = "ClientApp/dist";
 			});
+
+			string connstring = Configuration.GetConnectionString("db");
+			IDbConnection db = new MySqlConnection(connstring);
+			DAL.db = db;
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
