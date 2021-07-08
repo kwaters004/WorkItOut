@@ -38,6 +38,15 @@ namespace WorkItOut.Controllers
             DAL.RemoveWorkOut(id);
         }
 
+        [HttpPut("edit")]
+        public void EditWorkout([FromBody] Workouts work)
+        {
+            DAL.EditWorkout(work);
+        }
+
+
+
+
 
     }
 }

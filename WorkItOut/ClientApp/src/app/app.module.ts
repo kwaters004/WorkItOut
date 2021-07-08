@@ -14,33 +14,38 @@ import { UserSignupComponent } from './user-signup/user-signup.component';
 import { WorkoutapiService } from './workoutapi.service';
 import { WorkoutDetailComponent } from './workout-detail/workout-detail.component';
 import { AddWorkoutComponent } from './add-workout/add-workout.component';
+import { WorkoutLogComponent } from './workout-log/workout-log.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavMenuComponent,
-    HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
-    UserSignupComponent,
-    ListWorkoutsComponent,
-    WorkoutDetailComponent,
-    AddWorkoutComponent
+    declarations: [
+        AppComponent,
+        NavMenuComponent,
+        HomeComponent,
+        CounterComponent,
+        FetchDataComponent,
+        UserSignupComponent,
+        ListWorkoutsComponent,
+        WorkoutDetailComponent,
+        AddWorkoutComponent,
+        WorkoutLogComponent
 
-  ],
-  imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    HttpClientModule,
-    FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
-      {path: 'list', component: ListWorkoutsComponent}
-    ])
-  ],
-  providers: [WorkoutapiService],
-  bootstrap: [AppComponent]
+    ],
+    imports: [
+        BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+        HttpClientModule,
+        FormsModule,
+        RouterModule.forRoot([
+            { path: '', component: HomeComponent, pathMatch: 'full' },
+            { path: 'counter', component: CounterComponent },
+            { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'list', component: ListWorkoutsComponent },
+            { path: 'signup', component: UserSignupComponent },
+            { path: 'login', component: HomeComponent },
+            { path: 'wrkouts', component: ListWorkoutsComponent }
+        ])
+    ],
+    providers: [WorkoutapiService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

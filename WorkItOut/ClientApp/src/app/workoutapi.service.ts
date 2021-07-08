@@ -42,4 +42,12 @@ export class WorkoutapiService {
         });
     }
 
+    EditWorkout(theworkout) {
+        this.http.put<any>('workout/edit', theworkout).subscribe(result => {
+            console.log(result);
+        }, error => {
+            console.log(error);
+        });
+	}
+
   }

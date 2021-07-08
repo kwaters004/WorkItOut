@@ -12,22 +12,9 @@ export class ListWorkoutsComponent {
 /** list-workouts ctor */
 
 
-
-  workouts = [
-    {
-      workoutname: 'push-up',
-      recommendedReps: '10',
-      recommendedSets: '4',
-    },
-    {
-      workoutname: 'pull-up',
-      recommendedReps: '5',
-      recommendedSets: '3',
+	constructor(private http: HttpClient, private workoutService: WorkoutapiService) {
+        this.workoutService.GetWorkouts();
     }
-  ]
-
-	constructor(private http: HttpClient) {
-	}
 
 
 

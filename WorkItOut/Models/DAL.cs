@@ -28,9 +28,12 @@ namespace WorkItOut.Models
             // will want to add user id column to database          
             db.Delete(fave);
         }
-        #endregion
-        #region User
-        public static void AddUser(User user)
+
+
+
+		#endregion
+		#region User
+		public static void AddUser(User user)
         {
             db.Insert(user);
         }
@@ -71,6 +74,10 @@ namespace WorkItOut.Models
 		// add a method to update a workout, but actually just add it to retain 
 		// original version of it.f
 
+		public static void EditWorkout(Workouts workout)
+		{
+			db.Update(workout);
+		}
 
 		#endregion
 
