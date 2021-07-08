@@ -1,13 +1,13 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { WorkoutapiService } from '../workoutapi.service';
 
 @Component({
-    selector: 'app-user-login',
-    templateUrl: './user-login.component.html',
-    styleUrls: ['./user-login.component.css']
+    selector: 'app-user-signup',
+    templateUrl: './user-signup.component.html',
+    styleUrls: ['./user-signup.component.css']
 })
 /** user-login component*/
-export class UserLoginComponent {
+export class UserSignupComponent {
     /** user-login ctor */
     constructor(private workoutapi: WorkoutapiService) {
 
