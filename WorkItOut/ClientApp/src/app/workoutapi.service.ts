@@ -17,10 +17,10 @@ export class WorkoutapiService {
         theworkout()})
     }
 
-    AddUser(theworkout) {
-        this.http.post<any>('workout/')
-    }
-}
+    //AddUser(theworkout) {
+    //    this.http.post<any>('workout/')
+    //}
+
 
 
   AddWorkout(theworkout) {
