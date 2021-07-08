@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { WorkoutapiService } from '../workoutapi.service';
 
@@ -25,13 +26,8 @@ export class ListWorkoutsComponent {
     }
   ]
 
-  constructor(
-   
-  ) {
-
-      
-
-  }
+	constructor(private http: HttpClient) {
+	}
 
 
 

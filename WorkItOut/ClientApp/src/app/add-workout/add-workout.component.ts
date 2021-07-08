@@ -25,7 +25,7 @@ export class AddWorkoutComponent {
   constructor(private workoutapi: WorkoutapiService  ) {}
 
   AddWorkout() {
-
+      debugger;
     this.workoutapi.AddWorkout(this.workout)
   }
 }
