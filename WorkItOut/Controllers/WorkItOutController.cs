@@ -13,6 +13,7 @@ namespace WorkItOut.Controllers
     {
 
         [HttpGet("GetAllWorkOuts")]
+
         public List<Workouts> GetAllWorkOuts()
         {
             return DAL.GetAllWorkouts();

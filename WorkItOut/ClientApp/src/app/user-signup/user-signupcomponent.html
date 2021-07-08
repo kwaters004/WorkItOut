@@ -1,0 +1,33 @@
+﻿<div>user-login </div>
+<h2>
+  User Registration
+</h2>
+<div id="userId">
+    <form>
+        <label>First Name</label>
+        <input type="text" [(ngModel)]="firstname" /><br />
+
+        <label>Last Name</label>
+        <input type="text" [(ngModel)]="lastname" /><br />
+
+        <label>DOB</label>
+        <input type="date" [(ngModel)]="dob" /><br />
+
+        <label>Weight</label>
+        <input type="number" [(ngModel)]="initialWeight" /><br />
+
+        <label>Email</label>
+        <input type="email" [(ngModel)]="email" /><br />
+
+        <label>userName</label>
+        <input type="text" [(ngModel)]="userName" /><br />
+
+        <label>Height</label>
+        <input type="number" [(ngModel)]="height" /><br />
+
+        <label>Gender</label>
+        <input type="text" [(ngModel)]="Gender" /><br />
+
+        <button (click)="AddUser()">Register</button>
+    </form>
+</div>

@@ -5,13 +5,23 @@ import { error } from '@angular/compiler/src/util';
 @Injectable()
 export class WorkoutapiService {
 
-
     workouts = null;
-    
     
     constructor(private http: HttpClient) {
 
-  }
+    }
+
+    GetOneWorkout(id, theworkout) {
+        this.http.get<any>(`workout/getworkouts/${id}`, theworkout).subscribe(oneworkout => {
+            console.log(oneworkout);
+        theworkout()})
+    }
+
+    AddUser(theworkout) {
+        this.http.post<any>('workout/')
+    }
+}
+
 
   AddWorkout(theworkout) {
       this.http.put<any>('workout/add', theworkout).subscribe(result => {
@@ -33,4 +43,3 @@ export class WorkoutapiService {
     }
 
   }
-

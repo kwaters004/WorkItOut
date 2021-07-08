@@ -8,6 +8,7 @@ using WorkItOut.Models;
 
 namespace WorkItOut.Controllers
 {
+    //non-API controllers. 
     public class UserController : Controller
     {
         // GET: UserController

@@ -1,4 +1,5 @@
 ﻿import { Component } from '@angular/core';
+import { WorkoutapiService } from '../workoutapi.service';
 
 @Component({
     selector: 'app-user-login',
@@ -8,7 +9,11 @@
 /** user-login component*/
 export class UserLoginComponent {
     /** user-login ctor */
-    constructor() {
+    constructor(private workoutapi: WorkoutapiService) {
 
+    }
+
+    AddUser() {
+        this.workoutapi.AddUser(this.AddUser)
     }
 }
