@@ -14,7 +14,7 @@ export class HomeComponent {
 
     username: string = "";
     clickLogin() {
-        this.workoutService.AddUser(this.username);
-        this.route.navigateByUrl('/workout');
+      //  this.workoutService.AddUser(this.username);
+        this.route.navigateByUrl('/counter');
     }
 }
