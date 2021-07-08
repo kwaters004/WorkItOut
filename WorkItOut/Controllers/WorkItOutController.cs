@@ -12,7 +12,7 @@ namespace WorkItOut.Controllers
     public class WorkOutsController : ControllerBase
     {
 
-        [HttpGet("GetAllWorkOuts/{id}")]
+        [HttpGet("GetAllWorkOuts/")]
         public List<Workouts> GetAllWorkOuts()
         {
             return DAL.GetAllWorkouts();
