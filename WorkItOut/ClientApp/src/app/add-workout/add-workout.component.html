@@ -1,28 +1,27 @@
 <div>add-workout Component</div>
 <div>
   <label>Name of workout</label>
-  <input type="text" [(ngModel)]="workoutname" /><br />
+  <input type="text" [(ngModel)]="workout.workoutname" /><br />
 
   <label>Number of Reps</label>
-  <input type="number" [(ngModel)]="recommendedReps" /><br />
+  <input type="number" [(ngModel)]="workout.recommendedReps" /><br />
 
   <label>Number of Sets</label>
-  <input type="number" [(ngModel)]="recommendedSets" /><br />
+  <input type="number" [(ngModel)]="workout.recommendedSets" /><br />
 
   <label>How long will each set last</label>
-  <input type="number" [(ngModel)]="recommendedDuration" /><br />
+  <input type="number" [(ngModel)]="workout.recommendedDuration" /><br />
 
   <label>equipment</label>
-  <input type="text" [(ngModel)]="equipment" /><br />
+  <input type="text" [(ngModel)]="workout.equipment" /><br />
 
   <label>category</label>
-  <input type="text" [(ngModel)]="category" /><br />
+  <input type="text" [(ngModel)]="workout.category" /><br />
 
   <!--<label>timed Exercised</label>
   <input type="" [(ngModel)]="timeExercised" /><br />-->
 
 <label>Muscle Groups</label>
-  <input type="text" [(ngModel)]="musclegroups" /><br />
-
-  <button (click)="AddWorkout()"></button>
+  <input type="text" [(ngModel)]="workout.musclegroups" /><br />
+  <button (click)="AddWorkout()">Add Workout</button>
 </div>
