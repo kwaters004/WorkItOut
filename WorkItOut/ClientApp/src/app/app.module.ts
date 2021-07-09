@@ -16,6 +16,7 @@ import { WorkoutDetailComponent } from './workout-detail/workout-detail.componen
 import { AddWorkoutComponent } from './add-workout/add-workout.component';
 import { WorkoutLogComponent } from './workout-log/workout-log.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserapiService } from './userapi.service';
 
 
 @NgModule({
@@ -45,10 +46,12 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
             { path: 'signup', component: UserSignupComponent },
             { path: 'login', component: HomeComponent },
             { path: 'wrkouts', component: ListWorkoutsComponent },
-            { path: 'profile', component: UserProfileComponent }
+            { path: 'profile', component: UserProfileComponent },
+            { path: 'logworkout', component: WorkoutLogComponent },
+          
         ])
     ],
-    providers: [WorkoutapiService],
+    providers: [WorkoutapiService, UserapiService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
