@@ -1,22 +1,22 @@
 <div>Workout Log</div>
 <div>
     <label>Weight </label>
-    <input type="number" [(ngModel)]="workout.workoutname" /><br />
-
-    <label>Time of Workout</label>
-    <input type="number" [(ngModel)]="workout.recommendedReps" /><br />
+    <input type="number" [(ngModel)]="workout.weight" /><br />
+    <!-- Currently working on time or workout. Working on showing an automatic time for the user -->
+    <!--<label>Time of Workout</label>
+    <input type="number" [(ngModel)]="workout.timeOfWorkout" /><br />-->
 
     <label>Number of Reps</label>
-    <input type="number" [(ngModel)]="workout.recommendedSets" /><br />
-
+    <input type="number" [(ngModel)]="workout.reps" /><br />
+   
     <label>Number of Sets</label>
-    <input type="number" [(ngModel)]="workout.recommendedDuration" /><br />
+    <input type="number" [(ngModel)]="workout.sets" /><br />
 
     <label>How do you feel</label>
-    <input type="number" [(ngModel)]="workout.equipment" /><br />
+    <input type="number" min=0 max=10 [(ngModel)]="workout.howDoYouFeel" /><br />
 
-    
-   
+
+
 
     <button (click)="WorkoutLog()">Add Log</button>
 </div>
