@@ -3,11 +3,11 @@
 <button *ngIf="sh" (click)="showHide()" class="clickedDetails">details</button>
 <button *ngIf="!sh" (click)="showHide()">details</button>
 
-<div class="workoutDetails" *ngIf="sh">
+<div  *ngIf="sh">
 
 
 
-<div *ngIf="!shInput">
+<div class="workoutDetails" *ngIf="!shInput">
 	<div class="detailTitle">Recommended Reps:</div>
 	<div>{{wrkout?.recommendedReps}}</div>
 	<div class="detailTitle">Recommended Sets:</div>
@@ -25,7 +25,7 @@
 </div>
 
 
-<div *ngIf="shInput">
+<div class="workoutDetails" *ngIf="shInput">
 	<div class="detailTitle">Recommended Reps:</div>
 	<div><input  [(ngModel)]="wrkout.recommendedReps" /></div>
 	<div class="detailTitle">Recommended Sets:</div>

@@ -22,9 +22,9 @@ background-color: lightpink;
 
 .workoutDetails {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
   background-color: white;
-width: 40%;
+width: 50%;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 border-top: black solid 1px;
@@ -55,13 +55,94 @@ font-variant-caps: small-caps;
 
 button{
 border: none;
-margin: auto;
+margin: 10px;
 }
 
 
-.userProfile{
+.userProfile {
     display: grid;
-    grid-template-columns: 1fr 1fr 4fr;
+    grid-template-columns: repeat(4, 1fr);
+    border-right: solid black 2px;
+    border-left: solid black 2px;
+    padding: 5px;
 }
 
+/*    .userProfile > img {
+        width: 100%;
+        grid-column: 4;
+        border-radius: 100%;
 
+        object-position: -47px -1px;
+        object-fit: cover;
+    }*/
+
+.userProfile > img {
+width: 100%;
+grid-column: 4;
+}
+
+.greeting{
+    grid-column: span 4;
+    border-bottom: 2px black solid;
+}
+
+.attributeGroup{
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 10px;
+}
+
+.profileLabel{
+    font-weight: bold;
+}
+
+.LogFaveArea{
+margin: 10px;
+background-color: #666895;
+border-radius: 10px;
+grid-column: span 4;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 20px;
+min-height: 200px;
+
+
+}
+    .LogFaveArea > div {
+background-color: white;
+font-size: 2rem;
+margin: 10px;
+text-align: center;
+border-radius: 10px;
+align-self: center;
+
+    }
+
+    .LogFaveArea > div:hover {
+        font-size: 2.5rem;
+        filter: drop-shadow(2px 2px 4px);
+    }
+
+app-user-profile{
+
+}
+
+/**:hover{
+    font-size: larger;
+}
+*/
+
+.editProfile{
+grid-row: 2;
+grid-column: 3;
+height: 15%;
+width: 20%;
+justify-self: end;
+}
+
+.submitCancelButtons{
+display: grid;
+grid-template-columns: 1fr 1fr;
+justify-self: center;
+width: auto;
+}

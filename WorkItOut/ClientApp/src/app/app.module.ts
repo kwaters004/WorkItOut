@@ -15,6 +15,7 @@ import { WorkoutapiService } from './workoutapi.service';
 import { WorkoutDetailComponent } from './workout-detail/workout-detail.component';
 import { AddWorkoutComponent } from './add-workout/add-workout.component';
 import { WorkoutLogComponent } from './workout-log/workout-log.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { WorkoutLogComponent } from './workout-log/workout-log.component';
         ListWorkoutsComponent,
         WorkoutDetailComponent,
         AddWorkoutComponent,
-        WorkoutLogComponent
+        WorkoutLogComponent,
+        UserProfileComponent
 
     ],
     imports: [
@@ -42,7 +44,8 @@ import { WorkoutLogComponent } from './workout-log/workout-log.component';
             { path: 'list', component: ListWorkoutsComponent },
             { path: 'signup', component: UserSignupComponent },
             { path: 'login', component: HomeComponent },
-            { path: 'wrkouts', component: ListWorkoutsComponent }
+            { path: 'wrkouts', component: ListWorkoutsComponent },
+            { path: 'profile', component: UserProfileComponent }
         ])
     ],
     providers: [WorkoutapiService],
