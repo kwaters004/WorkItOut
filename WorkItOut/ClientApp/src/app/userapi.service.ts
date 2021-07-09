@@ -15,4 +15,13 @@ export class UserapiService {
     clickLogin(email) { 
         return  this.http.post<any>('user/isuser', email)
     }
+
+    WorkoutLog(workoutLog) {
+        this.http.put<any>('user/add', workoutLog).subscribe(result => {
+            debugger;
+            console.log(result);
+        }, error => {
+            console.log(error);
+        });
+    }
 }

@@ -15,6 +15,8 @@ import { WorkoutapiService } from './workoutapi.service';
 import { WorkoutDetailComponent } from './workout-detail/workout-detail.component';
 import { AddWorkoutComponent } from './add-workout/add-workout.component';
 import { WorkoutLogComponent } from './workout-log/workout-log.component';
+
+import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserapiService } from './userapi.service';
 
 
@@ -29,7 +31,8 @@ import { UserapiService } from './userapi.service';
         ListWorkoutsComponent,
         WorkoutDetailComponent,
         AddWorkoutComponent,
-        WorkoutLogComponent
+        WorkoutLogComponent,
+        UserProfileComponent
 
     ],
     imports: [
@@ -43,7 +46,10 @@ import { UserapiService } from './userapi.service';
             { path: 'list', component: ListWorkoutsComponent },
             { path: 'signup', component: UserSignupComponent },
             { path: 'login', component: HomeComponent },
-            { path: 'wrkouts', component: ListWorkoutsComponent }
+            { path: 'wrkouts', component: ListWorkoutsComponent },
+            { path: 'profile', component: UserProfileComponent },
+            { path: 'logworkout', component: WorkoutLogComponent },
+          
         ])
     ],
     providers: [WorkoutapiService, UserapiService],

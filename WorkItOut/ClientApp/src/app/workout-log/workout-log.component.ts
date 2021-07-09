@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserapiService } from '../userapi.service';
 
 @Component({
     selector: 'app-workout-log',
@@ -13,18 +14,19 @@ export class WorkoutLogComponent {
         timeOfWorkout : 0,
         reps : 0,
         sets: 0,
-        howDoYouFeel: "",
+        howDoYouFeel: 0,
         
     }
 
-    /** workout-log ctor */
-    constructor() {
+/** workout-log ctor */
 
-    }
+    constructor(private userapi: UserapiService) { }
+   
 
     WorkoutLog() {
 
-
+        debugger;
+        this.userapi.WorkoutLog(this.workoutlog)
     }
 }
 

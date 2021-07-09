@@ -10,7 +10,9 @@ namespace WorkItOut.Controllers
 {
     [Route("user")]
     [ApiController]
+
     public class UserController : ControllerBase
+
     {
         [HttpPost("add")]
         public bool AddToWorkoutlog(WorkoutLog newlog)
