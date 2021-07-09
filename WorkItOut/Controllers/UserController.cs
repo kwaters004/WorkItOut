@@ -8,15 +8,10 @@ using WorkItOut.Models;
 
 namespace WorkItOut.Controllers
 {
-    //non-API controllers. 
+    [Route("user")]
+    [ApiController]
     public class UserController : Controller
     {
-        // GET: UserController
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         [HttpPost("add")]
         public bool AddToWorkoutlog(WorkoutLog newlog)
         {
