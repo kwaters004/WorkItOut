@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { WorkoutapiService } from '../workoutapi.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class UserSignupComponent {
     signup = {
         firstname: "",
         lastname: "",
-        dob: 0,
+        dob: 0, 
         initialWeight: 0,
         email: "",
         userName: "",
@@ -21,12 +22,16 @@ export class UserSignupComponent {
     }
 
     @Input() firstname = "";
-    constructor(private workoutapi: WorkoutapiService) {
-
+    constructor(
+        private workoutapi: WorkoutapiService,
+        private route: Router
+    ) {
+        
     }
 
     AddUser() {
         debugger;
-        this.workoutapi.AddUser(this.AddUser)
+        this.workoutapi.AddUser = this.AddUser;
+        this.route.navigateByUrl('/login');
     }
 }
