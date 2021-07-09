@@ -12,17 +12,18 @@ import { UserapiService } from '../userapi.service';
 @Directive({})
 export class HomeComponent {
 
+    user: any = {
+		email: "",
+	}
+
     constructor(private workoutService: WorkoutapiService, private userservice: UserapiService ,private route: Router) {
 
     }
 
-    username: string = "";
 
 
     clickLogin() {
-
-        this.userservice.clickLogin(this.username).subscribe(result => console.log(result),
-            error => console.log(error)   )
-/*        this.route.navigateByUrl('/counter');*/
+        this.userservice.clickLogin(this.user);
+        
     }
 }
