@@ -12,13 +12,7 @@ export class UserapiService {
     constructor(private http: HttpClient) {
     }
 
-    clickLogin(email) {
-        this.http.get<any>('user/isuser', email).subscribe(result => {
-            debugger;
-            this.User = result;
-            console.log(result);
-        }, error => {
-            console.log(error);
-        });
+    clickLogin(email) { 
+        return  this.http.post<any>('user/isuser', email)
     }
 }

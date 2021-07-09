@@ -15,6 +15,7 @@ import { WorkoutapiService } from './workoutapi.service';
 import { WorkoutDetailComponent } from './workout-detail/workout-detail.component';
 import { AddWorkoutComponent } from './add-workout/add-workout.component';
 import { WorkoutLogComponent } from './workout-log/workout-log.component';
+import { UserapiService } from './userapi.service';
 
 
 @NgModule({
@@ -45,7 +46,7 @@ import { WorkoutLogComponent } from './workout-log/workout-log.component';
             { path: 'wrkouts', component: ListWorkoutsComponent }
         ])
     ],
-    providers: [WorkoutapiService],
+    providers: [WorkoutapiService, UserapiService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
