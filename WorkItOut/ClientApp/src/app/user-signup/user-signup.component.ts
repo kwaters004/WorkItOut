@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserapiService } from '../userapi.service';
 import { WorkoutapiService } from '../workoutapi.service';
 
 @Component({
@@ -24,14 +25,16 @@ export class UserSignupComponent {
     @Input() firstname = "";
     constructor(
         private workoutapi: WorkoutapiService,
-        private route: Router
+        private route: Router,
+        private userapi: UserapiService
     ) {
         
     }
 
     AddUser() {
         debugger;
-        this.workoutapi.AddUser = this.AddUser;
-        this.route.navigateByUrl('/login');
+        this.userapi.AddUser(this.signup);
+        this.route.navigateByUrl('/profile');
+
     }
 }

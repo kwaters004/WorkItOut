@@ -16,7 +16,9 @@ export class HomeComponent {
 		email: "",
 	}
 
-    constructor(private workoutService: WorkoutapiService, private userservice: UserapiService ,private route: Router) {
+    constructor(
+        private workoutService: WorkoutapiService,
+        private userservice: UserapiService, private route: Router) {
 
     }
 
@@ -24,6 +26,7 @@ export class HomeComponent {
 
     clickLogin() {
         this.userservice.clickLogin(this.user);
+        debugger;
         
     }
 }

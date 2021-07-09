@@ -43,18 +43,19 @@ namespace WorkItOut.Models
             db.Update(user);
         }
 
-		public static bool ConfirmUser(User user)
+		public static User ConfirmUser(User user)
         {
 			List<User> Ur = db.Query<User>($"select * from user where email = '{user.email}'").ToList();
-			if (Ur.Count > 0)
-            {
-				return true;
-            }
-			return false;
+			return Ur[0];
+
 
         }
-		
 
+		//public static User GetAUser(string email)
+		//{
+		//	List<User> Ur = db.Query<User>($"select * from user where email = '{email}'").ToList();
+		//	return Ur[0];
+		//}
 
 		#endregion
 
