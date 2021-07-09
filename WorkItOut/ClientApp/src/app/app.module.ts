@@ -15,6 +15,7 @@ import { WorkoutapiService } from './workoutapi.service';
 import { WorkoutDetailComponent } from './workout-detail/workout-detail.component';
 import { AddWorkoutComponent } from './add-workout/add-workout.component';
 import { WorkoutLogComponent } from './workout-log/workout-log.component';
+
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserapiService } from './userapi.service';
 

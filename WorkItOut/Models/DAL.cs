@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using Dapper;
 using Dapper.Contrib.Extensions;
 
 
@@ -42,6 +43,21 @@ namespace WorkItOut.Models
             db.Update(user);
         }
 
+		public static bool ConfirmUser(string email)
+        {
+			List<User> Ur = db.Query<User>("select * from user where email = @EML", new
+				{
+					EML = email
+				}).ToList();
+			if (Ur.Count > 0)
+            {
+				return true;
+            }
+			else
+            {
+				return false;
+            }
+        }
 		
 
 

@@ -10,14 +10,23 @@ namespace WorkItOut.Controllers
 {
     [Route("user")]
     [ApiController]
-    public class UserController : Controller
+
+    public class UserController : ControllerBase
+
     {
         [HttpPost("add")]
         public bool AddToWorkoutlog(WorkoutLog newlog)
         {
             Models.DAL.LogWorkout(newlog);
-                 return true;
+            return true;
         }
+
+        [HttpPost("isuser")]
+        public bool Isuser(string email)
+        {
+            return DAL.ConfirmUser(email);
+        }
+
 
         [HttpGet("GetWorkoutLogs/{id}")]
         public List<WorkoutLog> GetWorkoutLogs()
@@ -35,7 +44,7 @@ namespace WorkItOut.Controllers
         [HttpPost]
         public static void EditWorkoutLog(WorkoutLog log)
         {
-             DAL.EditWorkoutLog(log);
+            DAL.EditWorkoutLog(log);
         }
 
         [HttpGet("GetFavorites")]
@@ -57,6 +66,5 @@ namespace WorkItOut.Controllers
             DAL.DeleteFavorite(fav);
             return true;
         }
-
     }
 }
