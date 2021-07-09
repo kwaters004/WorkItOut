@@ -11,7 +11,7 @@ export class WorkoutLogComponent {
 
     workoutlog = {
         weight: 0,
-        timeOfWorkout : 0,
+        /*timeOfWorkout : 0,*/
         reps : 0,
         sets: 0,
         howDoYouFeel: 0,
