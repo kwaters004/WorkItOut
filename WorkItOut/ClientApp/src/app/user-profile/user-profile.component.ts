@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from 'oidc-client';
+import { UserapiService } from '../userapi.service';
 
 @Component({
     selector: 'app-user-profile',
@@ -34,15 +36,20 @@ export class UserProfileComponent {
     sh = false;
 
 
-    constructor() {
+    constructor(private userapi: UserapiService) {
 
 
         this.user.dob = new Date(1990, 8, 7);
         this.updateUserAttributes();
 
         this.userBackup = this.user;
+        
+        
     }
 
+    ngOnInit() {
+        this.user = this.userapi.User;
+	}
 
 
     updateUserAttributes() {

@@ -15,7 +15,7 @@ namespace WorkItOut.Controllers
     public class UserController : ControllerBase
 
     {
-        [HttpPost("add")]
+        [HttpPost("addlog")]
         public bool AddToWorkoutlog(WorkoutLog newlog)
         {
             Models.DAL.LogWorkout(newlog);
@@ -23,11 +23,11 @@ namespace WorkItOut.Controllers
         }
 
         [HttpPost("isuser")]
-        public bool Isuser([FromBody] User user)
+        public string Isuser([FromBody] User user)
         {
-            bool isUser = DAL.ConfirmUser(user);
-            string json = JsonSerializer.Serialize(isUser);
-            return isUser;
+            User theUser = DAL.ConfirmUser(user);
+            string json = JsonSerializer.Serialize(theUser);
+            return json;
         }
 
 
@@ -56,7 +56,7 @@ namespace WorkItOut.Controllers
             return DAL.GetFavorites();
         }
 
-        [HttpPost("add")]
+        [HttpPost("addfave")]
         public bool AddFavorites(Favorites fav)
         {
             DAL.AddFavorite(fav);
@@ -69,5 +69,22 @@ namespace WorkItOut.Controllers
             DAL.DeleteFavorite(fav);
             return true;
         }
+
+
+        [HttpPost("addUser")]
+        public void AddUser([FromBody] User user)
+        {
+                DAL.AddUser(user);
+        }
+
+
+        //[HttpPost("getUser")]
+        //public string GetUser([FromBody] User user)
+        //{
+        //    User u = DAL.GetAUser(user.email);
+        //    string json = JsonSerializer.Serialize(u);
+        //    return json;
+
+        //}
     }
 }

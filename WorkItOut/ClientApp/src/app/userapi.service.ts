@@ -1,22 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Injectable()
 export class UserapiService {
 
 	username = null;
-
+	isUser = false;
 	User = null;
 
-	constructor(private http: HttpClient) {
+	constructor(private http: HttpClient, private route: Router) {
 	}
 
 	clickLogin(user) {
 		this.http.post<any>('user/isuser', user).subscribe(result => {
-			console.log(result);
+			this.User = result;
+
 		}, error => {
-				console.log(error);
+			console.log(error);
 		});
 	}
 
@@ -27,4 +29,24 @@ export class UserapiService {
 			console.log(error);
 		});
 	}
+
+	AddUser(adduser) {
+		this.User = adduser;
+		this.http.post<any>('user/addUser', adduser).subscribe(result => {
+			console.log(result);
+			
+		}, error => {
+			console.log(error);
+		});
+	}
+
+
+	//GetUser(user) {
+	//	this.http.post<any>('user/getUser', user).subscribe(result => {
+	//		this.User = result;
+	//		debugger;
+	//	}, error => {
+	//		console.log(error);
+	//	});
+	//}
 }
