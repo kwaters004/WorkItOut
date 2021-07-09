@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using WorkItOut.Models;
 
@@ -22,9 +23,11 @@ namespace WorkItOut.Controllers
         }
 
         [HttpPost("isuser")]
-        public bool Isuser(string email)
+        public bool Isuser([FromBody] User user)
         {
-            return DAL.ConfirmUser(email);
+            bool isUser = DAL.ConfirmUser(user);
+            string json = JsonSerializer.Serialize(isUser);
+            return isUser;
         }
 
 
