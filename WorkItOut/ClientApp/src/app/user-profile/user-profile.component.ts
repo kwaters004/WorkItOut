@@ -14,7 +14,7 @@ export class UserProfileComponent {
     userDob = null;
     heightFt = null;
     heightInch = null;
-    newDOB = null;
+    newDOB: Date = null;
 
 
     user = {
@@ -70,8 +70,15 @@ export class UserProfileComponent {
 
     editProfile() {
 
+        var dt = new Date(this.newDOB);
+        var month = dt.getMonth();
+        var day = dt.getDay();
+        var year = dt.getFullYear();
+        this.user.dob = new Date(year, month, day);
 
- /*       this.user.dob = this.newDOB;*/
+        this.user.height = this.heightFt * 12 + this.heightInch;
+
+
         this.updateUserAttributes();
         this.showEdit();
         console.log(this.newDOB);

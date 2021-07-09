@@ -78,7 +78,7 @@
 				Height:
 			</div>
 			<div>
-				<input style="width: 20%" type="number" [(ngModel)]="heightFt" /> feet <input style="width: 20%" type="number" [(ngModel)]="heightInch" /> inches
+				<input style="width: 20%" type="number" min="2" max="8" [(ngModel)]="heightFt" /> feet <input style="width: 20%" type="number" [(ngModel)]="heightInch" min="0" max="11"/> inches
 			</div>
 			<div class="profileLabel">
 				Gender:
