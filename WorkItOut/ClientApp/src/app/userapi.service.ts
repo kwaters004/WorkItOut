@@ -23,7 +23,7 @@ export class UserapiService {
 	}
 
 	WorkoutLog(workoutLog) {
-		this.http.put<any>('user/add', workoutLog).subscribe(result => {
+		this.http.post<any>('user/addlog', workoutLog).subscribe(result => {
 			console.log(result);
 		}, error => {
 			console.log(error);
