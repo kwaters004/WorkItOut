@@ -35,6 +35,5 @@ export class UserSignupComponent {
         debugger;
         this.userapi.AddUser(this.signup);
         this.route.navigateByUrl('/profile');
-
     }
 }
