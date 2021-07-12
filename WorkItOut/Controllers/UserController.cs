@@ -56,6 +56,14 @@ namespace WorkItOut.Controllers
             return DAL.GetFavorites();
         }
 
+        [HttpGet("joindb")]
+        public string GetUserProfile()
+        {
+            List<User> UsersJoin = DAL.GetUserProfile();
+            string joinTheParty = JsonSerializer.Serialize(UsersJoin);
+            return joinTheParty;
+        }
+
         [HttpPost("addfave")]
         public bool AddFavorites(Favorites fav)
         {
@@ -76,6 +84,8 @@ namespace WorkItOut.Controllers
         {
                 DAL.AddUser(user);
         }
+
+        
 
 
         //[HttpPost("getUser")]

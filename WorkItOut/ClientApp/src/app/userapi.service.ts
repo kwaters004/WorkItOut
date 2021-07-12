@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { error } from '@angular/compiler/src/util';
 
 
 @Injectable()
@@ -39,6 +40,15 @@ export class UserapiService {
 			console.log(error);
 		});
 	}
+
+	GetUserJoin() {
+		this.http.get<any>('user/joindb').subscribe(result => {
+			console.log(result);
+			this.GetUserJoin = result;
+		}, error => {
+			console.log(error);
+		});
+    }//me
 
 
 	//GetUser(user) {
