@@ -1,31 +1,72 @@
-<div>user-signup Component </div>
-<div>
-    <label>First Name</label>
-    <input type="text" [(ngModel)]="signup.firstname" /><br />
+<h1>Sign Up</h1>
+<!--<div style="width: 50%">-->
+<div class="attributeGroup">
 
-    <label>Last Name</label>
-    <input type="text" [(ngModel)]="signup.lastname" /><br />
 
-    <label>DOB</label>
-    <input type="date" [(ngModel)]="signup.dob" /><br />
+	<label>First Name:</label>
+	<div class="warningDiv">
+		<input required type="text" [(ngModel)]="signup.firstname" />
+		<label class="warning">{{ fnameWarn }}</label>
+	</div>
 
-    <label>Weight</label>
-    <input type="number" [(ngModel)]="signup.initialWeight" /><br />
+	<label>Last Name:</label>
+	<div class="warningDiv">
+		<input required type="text" [(ngModel)]="signup.lastname" />
+		<label class="warning">{{ lnameWarn }}</label>
 
-    <label>Email</label>
-    <input type="email" [(ngModel)]="signup.email" /><br />
+	</div>
 
-    <label>userName</label>
-    <input type="text" [(ngModel)]="signup.userName" /><br />
+	<label>Date of Birth:</label>
+	<div class="warningDiv">
+		<input required type="date" [(ngModel)]="signup.dob" />
+		<label class="warning">{{dobWarn}}</label>
 
-    <label>Height</label>
-    <input type="number" [(ngModel)]="signup.height" /><br />
+	</div>
 
-    <label>Gender</label>
-    <input type="text" [(ngModel)]="signup.gender" /><br />
+	<label>Weight:</label>
+	<div class="warningDiv">
+		<input required type="number" max="500" min="70" [(ngModel)]="signup.initialWeight" />
+		<label class="warning">{{weightWarn}}</label>
+	</div>
 
-    <button (click)="AddUser()">Register</button>
+	<label>Email:</label>
+	<div class="warningDiv">
+		<input required type="email" [(ngModel)]="signup.email" />
+		<label class="warning">{{emailWarn}}</label>
+	</div>
+
+	<label>userName:</label>
+	<div class="warningDiv">
+	<input required type="text" [(ngModel)]="signup.userName" />
+	<label class="warning">{{userNameWarn}}</label>
+</div>
+
+	<label>Height:</label>
+	<div class="warningDiv">
+	<div>
+		<input required style="width: 20%" type="number" min="2" max="8" [(ngModel)]="heightFt" /> feet
+		<input style="width: 20%" type="number" [(ngModel)]="heightInch" min="0" max="11" /> inches
+		
+	</div>
+	<label class="warning">{{ heightWarn }}</label>
+</div>
+
+	<label>Gender:</label>
+	<div class="warningDiv">
+	<select required [(ngModel)]="signup.gender">
+		<option value="Male">Male</option>
+		<option value="Female">Female</option>
+		<option value="Other">Other</option>
+		<option value="Prefer Not to Answer">Prefer Not to Answer</option>
+	</select>
+	<label class="warning">{{genderWarn}}</label>
+</div>
+
+	<button (click)="AddUser()" style="grid-column: 1/3">Register</button>
 
 
 
 </div>
+
+
+<!--</div>-->

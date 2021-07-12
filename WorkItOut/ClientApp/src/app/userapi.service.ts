@@ -42,6 +42,7 @@ export class UserapiService {
 
 	AddUser(adduser) {
 		this.User = adduser;
+		debugger;
 		this.http.post<any>('user/addUser', adduser).subscribe(result => {
 			console.log(result);
 			

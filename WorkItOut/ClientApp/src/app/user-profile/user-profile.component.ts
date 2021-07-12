@@ -23,7 +23,7 @@ export class UserProfileComponent {
         userId: 1,
         firstname: "Bruce",
         lastname: "Banner",
-        dob: null,
+        dob: new Date(),
         initialWeight: 175,
         email: "b.banner@yahoo.com",
         userName: "Hulkaroo",
@@ -40,7 +40,7 @@ export class UserProfileComponent {
 
 
         this.user = this.userapi.User;
-        this.user.dob = new Date(1990, 8, 7);
+
         this.updateUserAttributes();
 
         this.userBackup = this.user;
@@ -55,7 +55,7 @@ export class UserProfileComponent {
     updateUserAttributes() {
         let today: any = new Date();
 
-
+        debugger;
         let y = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(this.user.dob);
         let m = new Intl.DateTimeFormat('en', { month: 'numeric' }).format(this.user.dob);
         let d = new Intl.DateTimeFormat('en', { day: 'numeric' }).format(this.user.dob);
