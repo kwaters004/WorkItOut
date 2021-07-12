@@ -12,6 +12,7 @@ namespace WorkItOut.Models
     {
         [Key]
         public int favoriteId { get; set; }
-        public int exerciseId { get; set; }
+        public int workoutId { get; set; }
+        public int userId { get; set; }
     }
 }

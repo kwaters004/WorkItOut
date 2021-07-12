@@ -8,7 +8,17 @@ export class UserapiService {
 
 	username = null;
 	isUser = false;
-	User = null;
+	User = {
+		userId: 1,
+		firstname: "",
+		lastname: "",
+		dob: null,
+		initialWeight: 0,
+		email: "",
+		userName: "",
+		height: 0,
+		gender: ""
+	}
 
 	constructor(private http: HttpClient, private route: Router) {
 	}
@@ -35,6 +45,15 @@ export class UserapiService {
 		this.http.post<any>('user/addUser', adduser).subscribe(result => {
 			console.log(result);
 			
+		}, error => {
+			console.log(error);
+		});
+	}
+
+	AddFavorite(addFave) {
+		debugger;
+		this.http.post<any>('user/addFave', {workoutsId: addFave, userId: this.User.userId }).subscribe(result => {
+			console.log(result);
 		}, error => {
 			console.log(error);
 		});
