@@ -11,7 +11,7 @@ export class WorkoutLogComponent {
 
     workoutlog = {
         weight: 0,
-        /*timeOfWorkout : 0,*/
+        timeOfWorkout : new Date(),
         reps : 0,
         sets: 0,
         howDoYouFeel: 0,
@@ -25,7 +25,7 @@ export class WorkoutLogComponent {
 
     WorkoutLog() {
 
-        debugger;
+        this.workoutlog.timeOfWorkout = new Date();
         this.userapi.WorkoutLog(this.workoutlog)
     }
 }
