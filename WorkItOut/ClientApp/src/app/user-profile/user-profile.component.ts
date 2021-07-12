@@ -40,7 +40,7 @@ export class UserProfileComponent {
 
 
         this.user = this.userapi.User;
-        debugger;
+
         this.updateUserAttributes();
 
         this.userBackup = this.user;

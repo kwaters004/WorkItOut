@@ -11,6 +11,7 @@ import { WorkoutapiService } from '../workoutapi.service';
 })
 /** user-signup component*/
 export class UserSignupComponent {
+
 	/** user-signup ctor */
 	fnameWarn = "";
 	lnameWarn = "";
@@ -122,4 +123,5 @@ export class UserSignupComponent {
 			this.userapi.AddUser(this.signup);
 			this.route.navigateByUrl('/profile');
 	}
+
 }
