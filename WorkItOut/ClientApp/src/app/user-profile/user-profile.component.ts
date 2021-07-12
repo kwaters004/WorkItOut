@@ -39,6 +39,7 @@ export class UserProfileComponent {
     constructor(private userapi: UserapiService) {
 
 
+        this.user = this.userapi.User;
         this.user.dob = new Date(1990, 8, 7);
         this.updateUserAttributes();
 
@@ -48,7 +49,6 @@ export class UserProfileComponent {
     }
 
     ngOnInit() {
-        this.user = this.userapi.User;
 	}
 
 

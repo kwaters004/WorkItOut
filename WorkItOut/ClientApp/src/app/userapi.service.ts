@@ -9,7 +9,7 @@ export class UserapiService {
 	username = null;
 	isUser = false;
 	User = {
-		userId: 1,
+		userId: null,
 		firstname: "",
 		lastname: "",
 		dob: null,
@@ -52,7 +52,7 @@ export class UserapiService {
 
 	AddFavorite(addFave) {
 		debugger;
-		this.http.post<any>('user/addFave', {workoutsId: addFave, userId: this.User.userId }).subscribe(result => {
+		this.http.post<any>('user/addFave', {workoutId: addFave, userId: this.User.userId }).subscribe(result => {
 			console.log(result);
 		}, error => {
 			console.log(error);

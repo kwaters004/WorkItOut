@@ -43,7 +43,9 @@
 		<button (click)="EditWorkout(wrkout)">Submit</button>
 	</div>
 
-	<input type="checkbox" [(ngModel)]="isFave" (change)="changeCheckbox()" /> Favorite <br />
+
+
+	<input *ngIf="userapi.User.userId" type="checkbox" [(ngModel)]="isFave" (change)="changeCheckbox()" /> Favorite <br />
 	<button (click)="showHideEdit()">Edit Workout</button>
 
 
