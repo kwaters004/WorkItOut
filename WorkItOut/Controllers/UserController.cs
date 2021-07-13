@@ -50,10 +50,10 @@ namespace WorkItOut.Controllers
             DAL.EditWorkoutLog(log);
         }
 
-        [HttpGet("GetFavorites")]
-        public List<Favorites> GetFavorites()
+        [HttpGet("GetFavorites/{id}")]
+        public List<Favorites> GetFavorites(int id)
         {
-            return DAL.GetFavorites();
+            return DAL.GetFavorites(id);
         }
 
         [HttpGet("joindb")]

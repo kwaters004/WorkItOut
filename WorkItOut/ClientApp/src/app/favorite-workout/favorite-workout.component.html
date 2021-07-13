@@ -1,0 +1,13 @@
+<div class="userFavorites">
+    <h1 class="hello">{{userapi.User?.firstname}} {{userapi.User?.lastname}}'s Favorite Workouts!</h1>
+
+    <div class="favoriteWorkouts" *ngIf="!sh">
+        <div class="Favs">
+            Favorite Workouts
+        </div>
+        <div *ngFor ="let fav of userapi.Favorites" >
+           {{fav?.workoutId}}
+        </div>
+
+    </div>
+</div>
