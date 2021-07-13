@@ -25,8 +25,8 @@ export class HomeComponent {
 
 
     clickLogin() {
-        this.userservice.clickLogin(this.user);
         debugger;
-        
+        this.userservice.clickLogin(this.user);
+        this.route.navigateByUrl('/profile');        
     }
 }

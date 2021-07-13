@@ -146,3 +146,13 @@ grid-template-columns: 1fr 1fr;
 justify-self: center;
 width: auto;
 }
+
+.warning{
+color: red;
+margin-left: 10px;
+}
+
+.warningDiv{
+display: grid;
+    grid-template-columns: auto auto;
+}

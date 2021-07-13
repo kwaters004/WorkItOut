@@ -9,7 +9,17 @@ export class UserapiService {
 
 	username = null;
 	isUser = false;
-	User = null;
+	User = {
+		userId: null,
+		firstname: "",
+		lastname: "",
+		dob: null,
+		initialWeight: 0,
+		email: "",
+		userName: "",
+		height: 0,
+		gender: ""
+	}
 
 	constructor(private http: HttpClient, private route: Router) {
 	}
@@ -33,6 +43,7 @@ export class UserapiService {
 
 	AddUser(adduser) {
 		this.User = adduser;
+		debugger;
 		this.http.post<any>('user/addUser', adduser).subscribe(result => {
 			console.log(result);
 			
@@ -40,6 +51,7 @@ export class UserapiService {
 			console.log(error);
 		});
 	}
+
 
 	GetUserJoin() {
 		this.http.get<any>('user/joindb').subscribe(result => {
@@ -49,6 +61,16 @@ export class UserapiService {
 			console.log(error);
 		});
     }//me
+
+	AddFavorite(addFave) {
+		debugger;
+		this.http.post<any>('user/addFave', {workoutId: addFave, userId: this.User.userId }).subscribe(result => {
+			console.log(result);
+		}, error => {
+			console.log(error);
+		});
+	}
+
 
 
 	//GetUser(user) {
