@@ -10,7 +10,7 @@ import { WeatherapiService } from '../weatherapi.service';
 export class WeatherInfoComponent {
     /** weather-info ctor */
     constructor(private weatherapi: WeatherapiService) {
-      
+        this.weatherapi.getCurrentWeather();
     }
 
 

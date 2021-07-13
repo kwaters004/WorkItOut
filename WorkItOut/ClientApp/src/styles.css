@@ -156,3 +156,18 @@ margin-left: 10px;
 display: grid;
     grid-template-columns: auto auto;
 }
+
+span {
+    content: "\2109";
+}
+
+.weatherInfo {
+    margin: 10px;
+    background-color: #666895;
+    border-radius: 10px;
+    grid-column: span 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+    min-height: 200px;
+}
