@@ -34,17 +34,17 @@ namespace WorkItOut.Controllers
             return json;
         }
 
-        [HttpGet("getip")]
-        public async Task<string> GetIPAddress()
-        {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://api.ipify.org");
-            var resp = await client.GetAsync("/?format=json");
-            string IPjson = await resp.Content.ReadAsStringAsync();
-            var parsedObject = JObject.Parse(IPjson);
-            IP = parsedObject["ip"].ToString();
-            return IPjson;
-        }
+        //[HttpGet("getip")]
+        //public async Task<string> GetIPAddress()
+        //{
+        //    HttpClient client = new HttpClient();
+        //    client.BaseAddress = new Uri("http://api.ipify.org");
+        //    var resp = await client.GetAsync("/?format=json");
+        //    string IPjson = await resp.Content.ReadAsStringAsync();
+        //    var parsedObject = JObject.Parse(IPjson);
+        //    IP = parsedObject["ip"].ToString();
+        //    return IPjson;
+        //}
 
 
     }
