@@ -34,7 +34,7 @@ export class UserapiService {
 	$isLoggedIn = new EventEmitter();
 
 	constructor(private http: HttpClient, private route: Router) {
-		
+
 	}
 
 	clickLogin(user) {

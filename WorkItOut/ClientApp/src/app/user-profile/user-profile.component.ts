@@ -74,7 +74,7 @@ export class UserProfileComponent {
     }
 
     editProfile() {
-
+        debugger;
         var dt = new Date(this.newDOB);
         var month = dt.getMonth();
         var day = dt.getDay();
@@ -99,5 +99,12 @@ export class UserProfileComponent {
         }
 	}
 
-    
+
+    parseDate(dateString: string): Date {
+        if (dateString) {
+
+            return new Date(dateString);
+        }
+        return null;
+    }
 }
