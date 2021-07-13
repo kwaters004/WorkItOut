@@ -21,6 +21,7 @@ import { UserapiService } from './userapi.service';
 import { LogOutComponent } from './log-out/log-out.component';
 import { WeatherInfoComponent } from './weather-info/weather-info.component';
 import { WeatherapiService } from './weatherapi.service';
+import { DbJoinComponent } from './db-join/db-join.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { WeatherapiService } from './weatherapi.service';
         WorkoutLogComponent,
         UserProfileComponent,
         LogOutComponent,
-        WeatherInfoComponent
+        WeatherInfoComponent,
+        DbJoinComponent
 
 
 
@@ -58,7 +60,8 @@ import { WeatherapiService } from './weatherapi.service';
             { path: 'profile', component: UserProfileComponent },
             { path: 'logworkout', component: WorkoutLogComponent },
             { path: 'logout', component: LogOutComponent },
-            { path: 'currentweather', component: WeatherInfoComponent }
+            { path: 'currentweather', component: WeatherInfoComponent },
+            { path: 'join', component: DbJoinComponent },
           
         ])
     ],
