@@ -19,6 +19,8 @@ import { WorkoutLogComponent } from './workout-log/workout-log.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserapiService } from './userapi.service';
 import { LogOutComponent } from './log-out/log-out.component';
+import { WeatherInfoComponent } from './weather-info/weather-info.component';
+import { WeatherapiService } from './weatherapi.service';
 
 
 @NgModule({
@@ -35,6 +37,10 @@ import { LogOutComponent } from './log-out/log-out.component';
         WorkoutLogComponent,
         UserProfileComponent,
         LogOutComponent,
+        WeatherInfoComponent
+
+
+
 
     ],
     imports: [
@@ -52,10 +58,11 @@ import { LogOutComponent } from './log-out/log-out.component';
             { path: 'profile', component: UserProfileComponent },
             { path: 'logworkout', component: WorkoutLogComponent },
             { path: 'logout', component: LogOutComponent },
+            { path: 'currentweather', component: WeatherInfoComponent }
           
         ])
     ],
-    providers: [WorkoutapiService, UserapiService],
+    providers: [WorkoutapiService, UserapiService, WeatherapiService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
