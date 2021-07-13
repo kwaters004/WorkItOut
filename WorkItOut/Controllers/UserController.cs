@@ -59,7 +59,7 @@ namespace WorkItOut.Controllers
         [HttpGet("joindb")]
         public string GetUserProfile()
         {
-            List<User> UsersJoin = DAL.GetUserProfile();
+            List<User> UsersJoin = DAL.GetUserProfile(2);
             string joinTheParty = JsonSerializer.Serialize(UsersJoin);
             return joinTheParty;
         }

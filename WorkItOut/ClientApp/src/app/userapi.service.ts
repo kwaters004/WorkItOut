@@ -9,7 +9,11 @@ export class UserapiService {
 
 	username = null;
 	isUser = false;
+
+	joinDb = null;
+
 	Favorites = null;
+
 	User = null;
 
 //User = {
@@ -77,8 +81,9 @@ export class UserapiService {
 
 	GetUserJoin() {
 		this.http.get<any>('user/joindb').subscribe(result => {
+			debugger;
 			console.log(result);
-			this.GetUserJoin = result;
+			this.joinDb = result;
 		}, error => {
 			console.log(error);
 		});
