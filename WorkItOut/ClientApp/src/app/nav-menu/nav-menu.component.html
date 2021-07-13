@@ -21,20 +21,20 @@
 					</li>
 
 					<li *ngIf="logInOut == 'Log In'" class="nav-item" [routerLinkActive]="['link-active']">
-						
+
 						<a class="nav-link text-dark" [routerLink]="['/login']">{{logInOut}}</a>
 
 					</li>
 					<li *ngIf="logInOut == 'Log Out'" class="nav-item" [routerLinkActive]="['link-active']">
-						
+
 						<a class="nav-link text-dark" [routerLink]="['/logout']">{{logInOut}}</a>
 
 					</li>
 
-					
+
 					<!--<li class="nav-item" [routerLinkActive]="['link-active']">
-						<a class="nav-link text-dark" [routerLink]="['/signup']">Sign Up</a>
-					</li>-->
+		<a class="nav-link text-dark" [routerLink]="['/signup']">Sign Up</a>
+	</li>-->
 
 					<li class="nav-item" [routerLinkActive]="['link-active']">
 						<a class="nav-link text-dark" [routerLink]="['/wrkouts']">List of Workouts</a>
@@ -44,6 +44,13 @@
 					<li *ngIf="logInOut == 'Log Out'" class="nav-item" [routerLinkActive]="['link-active']">
 						<a class="nav-link text-dark" [routerLink]="['/profile']">Profile</a>
 					</li>
+
+
+					<li *ngIf="logInOut == 'Log Out'" class="nav-item" [routerLinkActive]="['link-active']">
+						<a class="nav-link text-dark" [routerLink]="['/favorites']">List of Favorites</a>
+					</li>
+
+
 					<li *ngIf="logInOut == 'Log Out'" class="nav-item" [routerLinkActive]="['link-active']">
 						<a class="nav-link text-dark" [routerLink]="['/logworkout']">Log Workout</a>
 					</li>

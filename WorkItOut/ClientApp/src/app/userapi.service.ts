@@ -9,7 +9,7 @@ export class UserapiService {
 
 	username = null;
 	isUser = false;
-
+	Favorites = null;
 	User = null;
 
 //User = {
@@ -88,6 +88,14 @@ export class UserapiService {
 		});
 	}
 
+
+	GetFavorites(id) {
+		this.http.get<any>(`user/GetFavorites/userId ${id}`).subscribe(result => {
+			this.Favorites = result;
+		}, error => {
+			console.log(error);
+		});
+	}
 
 
 	//GetUser(user) {

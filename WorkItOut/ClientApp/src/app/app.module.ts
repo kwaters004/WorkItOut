@@ -19,6 +19,7 @@ import { WorkoutLogComponent } from './workout-log/workout-log.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserapiService } from './userapi.service';
 import { LogOutComponent } from './log-out/log-out.component';
+import { FavoriteWorkoutComponent } from './favorite-workout/favorite-workout.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { LogOutComponent } from './log-out/log-out.component';
         WorkoutLogComponent,
         UserProfileComponent,
         LogOutComponent,
+        FavoriteWorkoutComponent,
 
     ],
     imports: [
@@ -52,6 +54,7 @@ import { LogOutComponent } from './log-out/log-out.component';
             { path: 'profile', component: UserProfileComponent },
             { path: 'logworkout', component: WorkoutLogComponent },
             { path: 'logout', component: LogOutComponent },
+            { path: 'favorites', component: FavoriteWorkoutComponent },
           
         ])
     ],
