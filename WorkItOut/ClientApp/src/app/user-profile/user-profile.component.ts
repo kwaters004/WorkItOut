@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'oidc-client';
 import { UserapiService } from '../userapi.service';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-user-profile',
@@ -12,10 +14,11 @@ export class UserProfileComponent {
 /** user-profile ctor */
 
 
+    observ
+
     userAge = null;
     userDob = null;
-    heightFt = null;
-    heightInch = null;
+
     newDOB: Date = null;
 
 
@@ -36,35 +39,30 @@ export class UserProfileComponent {
     sh = false;
 
 
-    constructor(private userapi: UserapiService) {
+    constructor(private userapi: UserapiService, private route: Router) {
 
+            
 
-        this.user = this.userapi.User;
-
-        this.updateUserAttributes();
-
-        this.userBackup = this.user;
-        
-        
     }
 
     ngOnInit() {
+    /* this.updateUserAttributes();*/
+        this.loggedOut();
 	}
 
 
     updateUserAttributes() {
         let today: any = new Date();
+        
 
-        debugger;
-        let y = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(this.user.dob);
-        let m = new Intl.DateTimeFormat('en', { month: 'numeric' }).format(this.user.dob);
-        let d = new Intl.DateTimeFormat('en', { day: 'numeric' }).format(this.user.dob);
-        this.userDob = `${m}/${d}/${y}`
+        //let y = new Intl.DateFormat('en', { year: 'numeric' }).format(this.user.dob);
+        //let m = new Intl.DateFormat('en', { month: 'numeric' }).format(this.user.dob);
+        //let d = new Intl.DateFormat('en', { day: 'numeric' }).format(this.user.dob);
+        
+        
+        this.userAge = Math.floor((today - this.userapi.User.dob) / 86400000 / 365);
 
-        this.userAge = Math.floor((today - this.user.dob) / 86400000 / 365);
 
-        this.heightFt = Math.floor(this.user.height / 12);
-        this.heightInch = this.user.height % 12;
 	}
 
     showEdit() {
@@ -81,17 +79,25 @@ export class UserProfileComponent {
         var month = dt.getMonth();
         var day = dt.getDay();
         var year = dt.getFullYear();
-        this.user.dob = new Date(year, month, day);
+        this.userapi.User.dob = new Date(year, month, day);
+        this.userapi.updateUser();
 
-        this.user.height = this.heightFt * 12 + this.heightInch;
+        
 
 
-        this.updateUserAttributes();
+/*        this.updateUserAttributes();*/
         this.showEdit();
         console.log(this.newDOB);
         
 	}
 
+
+    loggedOut() {
+
+        if (this.userapi.User == null) {
+        this.route.navigateByUrl("/");
+        }
+	}
 
     
 }

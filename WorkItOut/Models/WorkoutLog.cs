@@ -18,6 +18,7 @@ namespace WorkItOut.Models
         public int reps { get; set; }
         public int sets { get; set; }
         public int howDoYouFeel { get; set; }
-        public int exerciseId { get; set; }
-    }
+        public int workoutId { get; set; }
+		public int userId { get; set; }
+	}
 }

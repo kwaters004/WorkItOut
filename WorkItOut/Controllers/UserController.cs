@@ -77,6 +77,13 @@ namespace WorkItOut.Controllers
                 DAL.AddUser(user);
         }
 
+        [HttpPost("udpateUser")]
+        public void UpdateUser([FromBody] User user)
+{
+            DAL.EditUser(user);
+            
+		}
+
 
         //[HttpPost("getUser")]
         //public string GetUser([FromBody] User user)
