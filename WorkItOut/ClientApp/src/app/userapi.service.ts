@@ -33,11 +33,16 @@ export class UserapiService {
 
 	$isLoggedIn = new EventEmitter();
 
+	theIp = {
+		ip: ''
+	}
+	
 	constructor(private http: HttpClient, private route: Router) {
 		
 	}
 
 	clickLogin(user) {
+		this.getIPAddress();
 		this.http.post<any>('user/isuser', user).subscribe(result => {
 			this.User = result;
 			this.udpateHeight();
@@ -148,4 +153,18 @@ export class UserapiService {
 			this.$isLoggedIn.emit(0);
 		}
 	}
+
+
+	getIPAddress() {
+		debugger;
+		this.http.get<any>('https://api.ipify.org/?format=json').subscribe(result => {
+			debugger;
+
+			this.theIp = result;
+		}, error => {
+			console.log(error);
+
+		})
+	}
+
 }
