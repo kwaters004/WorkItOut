@@ -47,21 +47,19 @@ namespace WorkItOut.Models
         {
 			List<User> Ur = db.Query<User>($"select * from user where email = '{user.email}'").ToList();
 			return Ur[0];
-
-
         }
 
-		//public static User GetAUser(string email)
-		//{
-		//	List<User> Ur = db.Query<User>($"select * from user where email = '{email}'").ToList();
-		//	return Ur[0];
-		//}
+        public static List<User> GetUserProfile()
+        {
+            List<User> Ur = db.Query<User>("select * from user join workoutlog on workoutlog.userid = user.userid; ").ToList();
+			return Ur;
+		}
 
-		#endregion
+        #endregion
 
 
-		#region Workouts
-		public static List<Workouts> GetAllWorkouts()
+        #region Workouts
+        public static List<Workouts> GetAllWorkouts()
 		{
 			return db.GetAll<Workouts>().ToList();
 		}
