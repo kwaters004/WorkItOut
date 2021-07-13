@@ -1,11 +1,12 @@
 <h3>Please Log in</h3>
 
-Username:
+Email:
 <input [(ngModel)]="user.email" type="text" />
 <br />
 Password:
-<input [(ngModel)]="password" type="text" />
+<input [(ngModel)]="password" type="password" />
 <button (click)="clickLogin()">Login</button>
 <br />
 <br />
 
+<h4>Don't have an account? <a [routerLink]="'/signup'">Click Here to Sign Up!</a></h4>

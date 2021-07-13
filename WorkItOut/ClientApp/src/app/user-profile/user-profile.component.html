@@ -1,6 +1,31 @@
+<style>
+	.loader {
+		margin: 50px auto 0;
+		border: 16px solid #f3f3f3;
+		border-top: 16px solid #3498db;
+		border-radius: 50%;
+		width: 120px;
+		height: 120px;
+		animation: spin 2s linear infinite;
+	}
+
+	@keyframes spin {
+		0% {
+			transform: rotate(0deg);
+		}
+
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+</style>
+
+
+<!--<div class="loader"></div>-->
+
 
 <div class="userProfile">
-	<h1 class="greeting">Hello {{user.firstname}} {{user.lastname}}!</h1>
+	<h1 class="greeting">Hello {{userapi.User?.firstname}} {{userapi.User?.lastname}}!</h1>
 	<img src="https://i1.wp.com/www.theilluminerdi.com/wp-content/uploads/2020/10/the-avengers-the-hulk-mark-ruffalo.jpg" />
 	<div style="display: grid; grid-template-columns: 1fr; grid-column: 1/3; grid-row: 2/3">
 		<div class="attributeGroup" *ngIf="!sh">
@@ -8,43 +33,43 @@
 				Initial Weight:
 			</div>
 			<div>
-				{{user.initialWeight}} lbs.
+				{{userapi.User?.initialWeight}} lbs.
 			</div>
 			<div class="profileLabel">
 				Date of Birth:
 			</div>
 			<div>
-				{{userDob}}
+				{{userapi?.dobStr}}
 			</div>
 			<div class="profileLabel">
 				Age:
 			</div>
 			<div>
-				{{userAge}}
+				{{userapi?.age}}
 			</div>
 			<div class="profileLabel">
 				Email:
 			</div>
 			<div>
-				{{user.email}}
+				{{userapi.User?.email}}
 			</div>
 			<div class="profileLabel">
 				Username:
 			</div>
 			<div>
-				{{user.userName}}
+				{{userapi.User?.userName}}
 			</div>
 			<div class="profileLabel">
 				Height:
 			</div>
 			<div>
-				{{heightFt}}'{{heightInch}}"
+				{{userapi.heightFt}}'{{userapi.heightInch}}"
 			</div>
 			<div class="profileLabel">
 				Gender:
 			</div>
 			<div>
-				{{user.gender}}
+				{{userapi.User?.gender}}
 			</div>
 		</div>
 
@@ -54,40 +79,42 @@
 				Initial Weight:
 			</div>
 			<div>
-				<input [(ngModel)]="user.initialWeight" /> lbs.
+				<input [(ngModel)]="userapi.User.initialWeight" /> lbs.
 			</div>
 			<div class="profileLabel">
 				Date of Birth:
 			</div>
 			<div>
-				<input type="date" [(ngModel)]="newDOB"/>
+				<input type="date" [(ngModel)]="newDOB" [value]="dateInputFormat" /> {{dateInputFormat}}
 			</div>
 			<div class="profileLabel">
 				Email:
 			</div>
 			<div>
-				<input type="email" [(ngModel)]="user.email" />
+				<input type="email" [(ngModel)]="userapi.User.email" />
 			</div>
 			<div class="profileLabel">
 				Username:
 			</div>
 			<div>
-				<input type="text" [(ngModel)]="user.userName" />
+				<input type="text" [(ngModel)]="userapi.User.userName" />
 			</div>
 			<div class="profileLabel">
 				Height:
 			</div>
 			<div>
-				<input style="width: 20%" type="number" min="2" max="8" [(ngModel)]="heightFt" /> feet <input style="width: 20%" type="number" [(ngModel)]="heightInch" min="0" max="11"/> inches
+				<input style="width: 20%" type="number" min="2" max="8" [(ngModel)]="userapi.heightFt" /> feet
+				<input style="width: 20%" type="number" [(ngModel)]="userapi.heightInch" min="0" max="11" /> inches
 			</div>
 			<div class="profileLabel">
 				Gender:
 			</div>
 			<div>
-				<select [(ngModel)]="user.gender">
-					<option value="male">Male</option>
-					<option value="female">Female</option>
-					<option value="other">Other</option>
+				<select [(ngModel)]="userapi.User.gender">
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+					<option value="Other">Other</option>
+					<option value="Prefer Not to Answer">Prefer Not to Answer</option>
 				</select>
 			</div>
 		</div>
@@ -96,9 +123,9 @@
 	</div>
 	<button *ngIf="!sh" class="editProfile" (click)="showEdit()">Edit</button>
 	<div *ngIf="sh" class="editProfile submitCancelButtons">
-<button (click)="editProfile()">Submit Changes</button>
-<button (click)="showEdit()">Cancel Changes</button>
-</div>
+		<button (click)="editProfile()">Submit Changes</button>
+		<button (click)="showEdit()">Cancel Changes</button>
+	</div>
 	<div class="LogFaveArea">
 		<!--<div>Area for Workout Logs</div>
 		<div>Area for Favorite Workouts</div>-->

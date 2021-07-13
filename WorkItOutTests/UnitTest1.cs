@@ -11,7 +11,7 @@ namespace WorkItOutTests
 		public void AddFavoriteTest()
 		{
 			Favorites fave = new Favorites();
-			fave.exerciseId = 3;
+			fave.workoutId = 3;
 			DAL.AddFavorite(fave);
 			// may want to add something in the DAL that will only add
 			// favorite if it's not already on the list

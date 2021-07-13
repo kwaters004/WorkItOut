@@ -49,11 +49,11 @@ export class UserSignupComponent {
 		this.calcHeight();
 	}
 
-	
+
 
 	calcHeight() {
 		this.signup.height = (this.heightInch) + (this.heightFt * 12);
-		if (this.signup.height < 48 ) {
+		if (this.signup.height < 48) {
 			this.signup.height = 0;
 		}
 	}
@@ -89,8 +89,9 @@ export class UserSignupComponent {
 			this.lnameWarn = "Please enter your last name.";
 			return;
 		}
-		if (!this.signup.dob) {
-			this.dobWarn = "Please enter your date of birth.";
+		if (!this.signup.dob || this.signup.dob < this.checkDate) {
+			this.dobWarn = "Please enter a valid date of birth.";
+			debugger;
 			return;
 		}
 		if (this.signup.initialWeight == 0) {
@@ -119,9 +120,10 @@ export class UserSignupComponent {
 
 
 
-
-			this.userapi.AddUser(this.signup);
-			this.route.navigateByUrl('/profile');
+		debugger;
+		this.userapi.AddUser(this.signup);
+		/*this.userapi.CheckLoggedIn();*/
+		this.route.navigateByUrl('/profile');
 	}
 
 }
