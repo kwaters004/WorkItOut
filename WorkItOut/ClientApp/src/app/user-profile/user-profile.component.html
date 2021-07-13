@@ -85,7 +85,7 @@
 				Date of Birth:
 			</div>
 			<div>
-				<input type="date" [(ngModel)]="newDOB" [value]="dateInputFormat" /> {{dateInputFormat}}
+				<input type="date" (input)="newDOB=parseDate($event.target.value)" [value]="userapi.dateInputFormat | date: 'yyyy-MM-dd'"/>
 			</div>
 			<div class="profileLabel">
 				Email:
