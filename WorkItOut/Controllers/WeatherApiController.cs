@@ -21,7 +21,7 @@ namespace WorkItOut.Controllers
     //    }
 
         [HttpGet("currentweather")]
-        public static async Task<string> Weatherinfo()
+        public async Task<string> Weatherinfo()
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("https://api.weatherapi.com");

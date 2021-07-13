@@ -8,10 +8,12 @@ export class WeatherapiService {
         this.getCurrentWeather();
     }
 
+    currentWeather = null;
+
     getCurrentWeather() {
-        debugger;
+
         this.http.get<any>('weather/currentweather').subscribe(result => {
-            debugger;
+            this.currentWeather = result;
             console.log(result);
         }, error => {
             console.log(error);
