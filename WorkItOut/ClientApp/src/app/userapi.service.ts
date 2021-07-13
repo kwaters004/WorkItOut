@@ -1,6 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { error } from '@angular/compiler/src/util';
 
 
 @Injectable()
@@ -68,6 +69,16 @@ export class UserapiService {
 		});
 	}
 
+
+	GetUserJoin() {
+		this.http.get<any>('user/joindb').subscribe(result => {
+			console.log(result);
+			this.GetUserJoin = result;
+		}, error => {
+			console.log(error);
+		});
+    }//me
+
 	AddFavorite(addFave) {
 		debugger;
 		this.http.post<any>('user/addFave', {workoutId: addFave, userId: this.User.userId }).subscribe(result => {
@@ -76,6 +87,7 @@ export class UserapiService {
 			console.log(error);
 		});
 	}
+
 
 
 	//GetUser(user) {
