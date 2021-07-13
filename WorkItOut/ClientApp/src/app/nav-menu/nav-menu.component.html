@@ -44,6 +44,13 @@
 					<li *ngIf="logInOut == 'Log Out'" class="nav-item" [routerLinkActive]="['link-active']">
 						<a class="nav-link text-dark" [routerLink]="['/profile']">Profile</a>
 					</li>
+
+
+					<li *ngIf="logInOut == 'Log Out'" class="nav-item" [routerLinkActive]="['link-active']">
+						<a class="nav-link text-dark" [routerLink]="['/favorites']">List of Favorites</a>
+					</li>
+
+
 					<li *ngIf="logInOut == 'Log Out'" class="nav-item" [routerLinkActive]="['link-active']">
 						<a class="nav-link text-dark" [routerLink]="['/logworkout']">Log Workout</a>
 					</li>

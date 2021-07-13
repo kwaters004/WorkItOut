@@ -14,10 +14,10 @@ namespace WorkItOut.Models
 		public static IDbConnection db;
         // will move this to the config file at some point
         #region Favorites
-        public static List<Favorites> GetFavorites()
+        public static List<Favorites> GetFavorites(int id)
         {
             // will want to add in user id param
-            return db.GetAll<Favorites>().ToList();
+            return db.Query<Favorites>( $"select * from favorites where userId = {id}" ).ToList();
         }
         public static void AddFavorite(Favorites fave)
         {

@@ -1,18 +1,27 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
+import { UserapiService } from './userapi.service';
 
 @Injectable()
-export class WeatherapiService {
-    constructor(private http: HttpClient) {
+export class WeatherapiService implements OnInit {
 
-        this.getCurrentWeather();
+
+
+    constructor(private http: HttpClient, private userapi: UserapiService) {
+        debugger;
+
+    }
+
+    ngOnInit() {
+        
+
     }
 
     currentWeather = null;
 
-    getCurrentWeather() {
-
-        this.http.get<any>('weather/currentweather').subscribe(result => {
+    getCurrentWeather(ip: string) {
+        debugger;
+        this.http.get<any>(`weather/currentweather/${ip}`).subscribe(result => {
             this.currentWeather = result;
             console.log(result);
         }, error => {
@@ -21,4 +30,5 @@ export class WeatherapiService {
 
 
     }
+
 }

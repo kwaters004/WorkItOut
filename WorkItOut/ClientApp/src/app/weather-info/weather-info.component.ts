@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserapiService } from '../userapi.service';
 import { WeatherapiService } from '../weatherapi.service';
 
 @Component({
@@ -9,8 +10,8 @@ import { WeatherapiService } from '../weatherapi.service';
 /** weather-info component*/
 export class WeatherInfoComponent {
     /** weather-info ctor */
-    constructor(private weatherapi: WeatherapiService) {
-      
+    constructor(private weatherapi: WeatherapiService, private userapi: UserapiService) {
+        this.weatherapi.getCurrentWeather(this.userapi.theIp.ip);
     }
 
 

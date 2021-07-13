@@ -27,6 +27,8 @@ export class HomeComponent {
 		// this is to initialize the sql connection.
 		//Then it doesn't lag when returning data
 
+	
+		
 		this.userapi.clickLogin(this.user);
 		/*        this.loggedOut();*/
 	}

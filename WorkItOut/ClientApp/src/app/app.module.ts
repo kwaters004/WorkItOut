@@ -19,9 +19,13 @@ import { WorkoutLogComponent } from './workout-log/workout-log.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserapiService } from './userapi.service';
 import { LogOutComponent } from './log-out/log-out.component';
+
+import { FavoriteWorkoutComponent } from './favorite-workout/favorite-workout.component';
+
 import { WeatherInfoComponent } from './weather-info/weather-info.component';
 import { WeatherapiService } from './weatherapi.service';
 import { DbJoinComponent } from './db-join/db-join.component';
+
 
 
 @NgModule({
@@ -39,7 +43,10 @@ import { DbJoinComponent } from './db-join/db-join.component';
         UserProfileComponent,
         LogOutComponent,
         WeatherInfoComponent,
-        DbJoinComponent
+        DbJoinComponent,
+        FavoriteWorkoutComponent,
+
+
 
 
 
@@ -60,8 +67,15 @@ import { DbJoinComponent } from './db-join/db-join.component';
             { path: 'profile', component: UserProfileComponent },
             { path: 'logworkout', component: WorkoutLogComponent },
             { path: 'logout', component: LogOutComponent },
-            { path: 'currentweather', component: WeatherInfoComponent },
+
+
             { path: 'join', component: DbJoinComponent },
+
+            { path: 'favorites', component: FavoriteWorkoutComponent },
+
+            { path: 'currentweather', component: WeatherInfoComponent }
+
+
           
         ])
     ],
