@@ -10,10 +10,9 @@ code {
 }
 
 body {
- 
-    background: linear-gradient(110deg, #ffed4b 60%, lightpink 60%);
- 
-}
+  
+ }
+
 
 .btn-primary {
   color: #fff;
@@ -187,4 +186,45 @@ span {
     margin-right: auto;
     width: 50%;
    
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+
+.content {
+    position: fixed;
+    
+    background: rgba(0, 0, 0, 0.5);
+    color: greenyellow;
+    width: 35%;
+    padding: 30px;
+    display: inline-block;
+    margin-left: -20%;
+    margin-right: 0%;
+   
+}
+
+ #myBtn:hover {
+        background: #ddd;
+        color: black;
+ }
+
+.summary {
+    display: inline-block;
+    width: 450px;
+    text-align: right;
+}
+
+.colorlink1 {
+    color: mediumaquamarine;
+}
+
+.colorlink2 {
+    color: mediumaquamarine;
 }

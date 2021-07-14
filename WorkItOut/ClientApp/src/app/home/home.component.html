@@ -1,22 +1,33 @@
-<h3>Please Log in</h3>
 
-Email:
-<input [(ngModel)]="user.email" type="text" />
-<br />
-Password:
-<input [(ngModel)]="password" type="password" />
-<button (click)="clickLogin()">Login</button>
-<br />
-<br />
+<video autoplay muted loop id="myVideo">
+    <source src="/videos/180419_Boxing_15_09.mp4" type="video/mp4"width="700" height="700">
+</video>
 
-<h4>Don't have an account? <a [routerLink]="'/signup'">Click Here to Sign Up!</a></h4>
 
-<div class="WorkoutLogo">
-    <img src="/images/WorkitOut.png" width="700" height="700"  />
+<div class="content">
+    <img src="/images/WorkitOut.png" width="180" height="150" />
+    <h3>Please Log in</h3>
 
+    Email:
+    <input [(ngModel)]="user.email" type="text" />
+    <br />
+    Password:
+    <input [(ngModel)]="password" type="password" />
+    <button (click)="clickLogin()">Login</button> <br />
+    <div class="summary">
+        Work it out is here to guide you and help you stay fit.
+
+    </div>
+
+    <br />
+    <br />
+
+    <h5>Don't have an account? <a [routerLink]="'/signup'" class="colorlink1">Click Here to Sign Up!</a></h5> <br />
+
+    <h5> Not a member yet? See what we offer! <a [routerLink]="'/list'" class="colorlink2">View Workouts</a></h5>
+    <br />
 
 
 </div>
-
 
 
