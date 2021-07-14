@@ -77,7 +77,7 @@ namespace WorkItOut.Models
 		{
 			// do we need this? admin only 
 			Workouts workout = new Workouts();
-			workout.workoutsId = id;
+			workout.workoutId = id;
 			db.Delete(workout);
 		}
 

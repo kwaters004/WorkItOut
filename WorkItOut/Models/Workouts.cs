@@ -11,7 +11,7 @@ namespace WorkItOut.Models
     public class Workouts
     {
         [Key]
-        public int workoutsId { get; set; }
+        public int workoutId { get; set; }
         public string workoutname { get; set; }
         public int recommendedReps { get; set; }
         public int recommendedSets { get; set; }

@@ -6,6 +6,7 @@ import { error } from '@angular/compiler/src/util';
 export class WorkoutapiService {
 
     workouts = null;
+    currentWorkoutId = null;
     
     constructor(private http: HttpClient) {
 

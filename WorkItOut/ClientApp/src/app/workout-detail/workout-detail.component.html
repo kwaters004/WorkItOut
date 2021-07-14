@@ -1,7 +1,19 @@
+<div class="innerWorkoutCard">
+<div>
 <label *ngIf="!shInput">{{wrkout?.workoutname}}</label>
 <input *ngIf="shInput"  [(ngModel)]="wrkout.workoutname" />
 <button *ngIf="sh" (click)="showHide()" class="clickedDetails">details</button>
 <button *ngIf="!sh" (click)="showHide()">details</button>
+
+</div>
+<div *ngIf="userapi.User">
+	<button *ngIf="!shLog" (click)="showLog()" >Log This workout</button>
+
+	<app-workout-log *ngIf="shLog" [userId]="userapi.User.userId" [workoutId]="wrkout.workoutId" (hideLog)="showLog()"></app-workout-log>
+</div>
+
+</div>
+
 
 <div *ngIf="sh">
 
@@ -44,8 +56,9 @@
 	</div>
 
 
-
-	<input type="checkbox" [(ngModel)]="isFave" (change)="changeCheckbox()" /> Favorite <br />
+<div *ngIf="userapi.User">
+	<input  type="checkbox" [(ngModel)]="isFave" (change)="changeCheckbox()" /> Favorite
+</div>
 	<button (click)="showHideEdit()">Edit Workout</button>
 
 	<!--*ngIf="userapi.User.userId" -->
