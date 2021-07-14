@@ -56,10 +56,11 @@ namespace WorkItOut.Controllers
             return DAL.GetFavorites(id);
         }
 
-        [HttpGet("joindb")]
-        public string GetUserProfile()
+        [HttpGet("joindb/{id}")]
+        public string GetUserJoinDB(int id)
         {
-            List<User> UsersJoin = DAL.GetUserProfile(2);
+            List<UserLog> UsersJoin = DAL.GetUserProfile(id);
+
             string joinTheParty = JsonSerializer.Serialize(UsersJoin);
             return joinTheParty;
         }

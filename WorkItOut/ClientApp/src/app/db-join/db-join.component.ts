@@ -11,14 +11,11 @@ import { Router } from '@angular/router';
 })
 /** dbJoin component*/
 export class DbJoinComponent {
-    user: string = '';
-
 
     /** dbJoin ctor */
     constructor(private http: HttpClient, private workoutService: WorkoutapiService,
         private userService: UserapiService) {
-        this.userService.GetUserJoin();
+        this.userService.GetUserJoin(this.userService.User.userId);
     }
-
 
 }

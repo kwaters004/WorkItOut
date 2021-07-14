@@ -49,9 +49,9 @@ namespace WorkItOut.Models
 			return Ur[0];
         }
 
-		public static List<User> GetUserProfile(int id)
+		public static List<UserLog> GetUserProfile(int id)
 		{
-			List<User> Ur = db.Query<User>($"select * from user join workoutlog on workoutlog.userid = user.userid where user.userId = {id};").ToList();
+			List<UserLog> Ur = db.Query<UserLog>($"select * from user join workoutlog on workoutlog.userid = user.userid where user.userId = {id} limit 1;").ToList();
 			return Ur;
 		}
 
