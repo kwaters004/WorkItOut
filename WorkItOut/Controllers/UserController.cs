@@ -18,7 +18,7 @@ namespace WorkItOut.Controllers
         [HttpPost("addlog")]
         public bool AddToWorkoutlog(WorkoutLog newlog)
         {
-            Models.DAL.LogWorkout(newlog);
+            DAL.LogWorkout(newlog);
             return true;
         }
 
@@ -37,7 +37,7 @@ namespace WorkItOut.Controllers
             return DAL.GetWorkoutLogs();
         }
 
-        [HttpDelete("remove/{workoutsId}")]
+        [HttpDelete("remove/{workoutId}")]
         public bool RemoveFromWorkOutlog(int id)
         {
             DAL.RemoveWorkOut(id);

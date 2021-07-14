@@ -14,7 +14,7 @@ export class UserProfileComponent {
 /** user-profile ctor */
 
 
-    observ
+
 
     userAge = null;
     userDob = null;
@@ -74,7 +74,7 @@ export class UserProfileComponent {
     }
 
     editProfile() {
-        debugger;
+
  /*       var dt = new Date(this.newDOB);*/
         //var dt = new Date();
         //var month = dt.getMonth();

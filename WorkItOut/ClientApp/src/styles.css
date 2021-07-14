@@ -41,9 +41,15 @@ padding: 10px;
 
 }
 
-app-workout-detail > label{
+.innerWorkoutCard{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+app-workout-detail > .innerWorkoutCard > div > label{
 font-size: 2rem;
 font-variant-caps: small-caps;
+
 
 }
 

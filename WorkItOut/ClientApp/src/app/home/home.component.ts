@@ -10,7 +10,7 @@ import { UserapiService } from '../userapi.service';
 	templateUrl: './home.component.html',
 })
 @Directive({})
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
 	user: any = {
 		email: "",
@@ -29,14 +29,15 @@ export class HomeComponent {
 
 	
 		
-		this.userapi.clickLogin(this.user);
-		/*        this.loggedOut();*/
+		//this.userapi.clickLogin(this.user);
+		        this.loggedOut();
 	}
 
 
 	clickLogin() {
 
 		this.userapi.clickLogin(this.user);
+		this.userapi.User = this.user;
 		this.route.navigateByUrl('/profile');
 		this.userapi.CheckLoggedIn();
 	}
@@ -44,7 +45,7 @@ export class HomeComponent {
 
 	loggedOut() {
 
-		if (this.userapi.User.userId != null) {
+		if (this.userapi.User != null) {
 			this.route.navigateByUrl("/profile");
 		}
 	}

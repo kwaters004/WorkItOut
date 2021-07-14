@@ -14,20 +14,20 @@ export class UserapiService {
 
 	Favorites = null;
 
-/*	User = null;*/
+	User = null;
 
-	User = {
-		firstname: "",
-		lastname: "",
-		dob: null,
-		initialWeight: 0,
-		email: "",
-		userName: "",
-		height: 0,
-		gender: "",
-		userId: null,
-		password: ""
-	}
+	//User = {
+	//	firstname: "",
+	//	lastname: "",
+	//	dob: null,
+	//	initialWeight: 0,
+	//	email: "",
+	//	userName: "",
+	//	height: 0,
+	//	gender: "",
+	//	userId: null,
+	//	password: ""
+	//}
 
 
 //User = {
@@ -71,6 +71,7 @@ export class UserapiService {
 	}
 
 	WorkoutLog(workoutLog) {
+		debugger;
 		this.http.post<any>('user/addlog', workoutLog).subscribe(result => {
 			console.log(result);
 		}, error => {
@@ -132,11 +133,11 @@ export class UserapiService {
 	//}
 
 	updateUser() {
-		debugger;
+
 		this.updateAgeAndDOB();
 		this.User.height = this.heightFt * 12 + this.heightInch;
 		this.http.post<any>('/user/edit', this.User).subscribe(result => {
-			debugger;
+
 			console.log(result);
 		}, error => {
 				console.log(error)
@@ -149,6 +150,7 @@ export class UserapiService {
 
 
 		let today: any = new Date();
+		// newStr is getting what is in the database 'YYYY-MM-DD' format
 		let newStr = this.User.dob;
 		this.dob = new Date(newStr.substring(0, 4), newStr.substring(5, 7), newStr.substring(8, 10));
 		this.dateInputFormat = newStr.substring(0, 4) + "-" + newStr.substring(5, 7) + "-" + newStr.substring(8, 10);

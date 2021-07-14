@@ -14,11 +14,12 @@ namespace WorkItOut.Models
         [Key]
         public int workoutlogId { get; set; }
         public int weight { get; set; }
-        //public DateTime timeOfWorkout { get; set; }
+        public DateTime timeOfWorkout { get; set; }
         public int reps { get; set; }
         public int sets { get; set; }
         public int howDoYouFeel { get; set; }
         public int workoutId { get; set; }
 		public int userId { get; set; }
+
 	}
 }

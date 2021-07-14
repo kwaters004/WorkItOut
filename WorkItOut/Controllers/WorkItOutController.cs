@@ -32,7 +32,7 @@ namespace WorkItOut.Controllers
             DAL.AddWorkout(work);
         }
 
-        [HttpDelete("remove/{workoutsId}")]
+        [HttpDelete("remove/{workoutId}")]
         public void RemoveWorkOut(int id)
         {
             DAL.RemoveWorkOut(id);

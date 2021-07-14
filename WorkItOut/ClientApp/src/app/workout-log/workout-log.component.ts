@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { UserapiService } from '../userapi.service';
 
 @Component({
@@ -9,14 +9,26 @@ import { UserapiService } from '../userapi.service';
 /** workout-log component*/
 export class WorkoutLogComponent {
 
+/*    workoutlog = null;*/
+
     workoutlog = {
         weight: 0,
-        timeOfWorkout : new Date(),
+        timeOfWorkout: null,
         reps : 0,
         sets: 0,
         howDoYouFeel: 0,
+        workoutId: 0,
+        userId: 0,
         
     }
+
+    
+
+    @Input() userId;
+    @Input() workoutId;
+    @Output() hideLog: EventEmitter<any> = new EventEmitter<any>();
+
+    $isLoggedIn = new EventEmitter();
 
 /** workout-log ctor */
 
@@ -25,8 +37,28 @@ export class WorkoutLogComponent {
 
     WorkoutLog() {
 
-        this.workoutlog.timeOfWorkout = new Date();
+        this.HideLog();
+        this.workoutlog.userId = this.userId;
+        this.workoutlog.workoutId = this.workoutId; 
+
+        let newDate = new Date();
+        debugger;
+
+        //this is saving the date and time of UTC
+        this.workoutlog.timeOfWorkout = newDate.toISOString();
+
+        
+
         this.userapi.WorkoutLog(this.workoutlog)
     }
+
+
+    HideLog() {
+        this.hideLog.emit(null);
+    }
+
+    CancelLog() {
+        this.HideLog();
+	}
 }
 
