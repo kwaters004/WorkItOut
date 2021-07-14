@@ -86,10 +86,12 @@ namespace WorkItOut.Controllers
         }
 
 
-        [HttpPost("udpateUser")]
-        public void UpdateUser([FromBody] User user)
-{
+        [HttpPost("edit")]
+		public void UpdateUser([FromBody] User user)
+
+		{
             DAL.EditUser(user);
+            //return "hello";
             
 		}
 

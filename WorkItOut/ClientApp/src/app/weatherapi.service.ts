@@ -8,7 +8,7 @@ export class WeatherapiService implements OnInit {
 
 
     constructor(private http: HttpClient, private userapi: UserapiService) {
-        debugger;
+
 
     }
 
@@ -20,7 +20,7 @@ export class WeatherapiService implements OnInit {
     currentWeather = null;
 
     getCurrentWeather(ip: string) {
-        debugger;
+
         this.http.get<any>(`weather/currentweather/${ip}`).subscribe(result => {
             this.currentWeather = result;
             console.log(result);

@@ -19,7 +19,7 @@ export class UserProfileComponent {
     userAge = null;
     userDob = null;
 
-    newDOB: Date = null;
+    newDOB = null;
 
 
     user = {
@@ -75,11 +75,20 @@ export class UserProfileComponent {
 
     editProfile() {
         debugger;
-        var dt = new Date(this.newDOB);
-        var month = dt.getMonth();
-        var day = dt.getDay();
-        var year = dt.getFullYear();
-        this.userapi.User.dob = new Date(year, month, day);
+ /*       var dt = new Date(this.newDOB);*/
+        //var dt = new Date();
+        //var month = dt.getMonth();
+        //var day = dt.getDay();
+        //var year = dt.getFullYear();
+    /*        this.userapi.User.dob = new Date(year, month, day);*/
+        if (this.newDOB) {
+            this.userapi.User.dob = this.newDOB.substring(0, 10);
+
+        }
+        else {
+            this.userapi.User.dob = this.userapi.User.dob.substring(0, 10);
+		}
+/*        this.userapi.User.password = "";*/
         this.userapi.updateUser();
 
         
@@ -87,7 +96,7 @@ export class UserProfileComponent {
 
 /*        this.updateUserAttributes();*/
         this.showEdit();
-        console.log(this.newDOB);
+/*        console.log(this.newDOB);*/
         
 	}
 
