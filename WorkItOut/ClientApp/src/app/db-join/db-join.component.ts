@@ -21,11 +21,4 @@ export class DbJoinComponent {
     }
 
 
-
-    showJoin() {
-
-        alert('show detail');
-
-    }
-
 }

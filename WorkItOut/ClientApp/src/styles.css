@@ -9,8 +9,10 @@ code {
   color: #e01a76;
 }
 
-body{
-background-color: lightpink;
+body {
+ 
+    background: linear-gradient(110deg, #ffed4b 60%, lightpink 60%);
+ 
 }
 
 .btn-primary {
@@ -170,4 +172,13 @@ span {
     grid-template-columns: 1fr 1fr;
     grid-gap: 40px;
     min-height: 200px;
+}
+
+
+.partnerlogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+   
 }

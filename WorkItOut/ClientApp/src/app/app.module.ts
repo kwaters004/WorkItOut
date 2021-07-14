@@ -24,6 +24,7 @@ import { FavoriteWorkoutComponent } from './favorite-workout/favorite-workout.co
 
 import { WeatherInfoComponent } from './weather-info/weather-info.component';
 import { WeatherapiService } from './weatherapi.service';
+import { DbJoinComponent } from './db-join/db-join.component';
 
 
 
@@ -41,10 +42,10 @@ import { WeatherapiService } from './weatherapi.service';
         WorkoutLogComponent,
         UserProfileComponent,
         LogOutComponent,
-
+        WeatherInfoComponent,
+        DbJoinComponent,
         FavoriteWorkoutComponent,
 
-        WeatherInfoComponent
 
 
 
@@ -67,9 +68,13 @@ import { WeatherapiService } from './weatherapi.service';
             { path: 'logworkout', component: WorkoutLogComponent },
             { path: 'logout', component: LogOutComponent },
 
+
+            { path: 'join', component: DbJoinComponent },
+
             { path: 'favorites', component: FavoriteWorkoutComponent },
 
             { path: 'currentweather', component: WeatherInfoComponent }
+
 
           
         ])
