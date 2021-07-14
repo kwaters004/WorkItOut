@@ -125,10 +125,10 @@ align-self: center;
 
     }
 
-    .LogFaveArea > div:hover {
+/*    .LogFaveArea > div:hover {
         font-size: 2.5rem;
         filter: drop-shadow(2px 2px 4px);
-    }
+    }*/
 
 app-user-profile{
 
@@ -228,3 +228,17 @@ span {
 .colorlink2 {
     color: mediumaquamarine;
 }
+
+.listLog{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-color: grey;
+    margin: 10px;
+    
+}
+
+.listLog > div{
+    font-size: 1rem;
+}
+
+

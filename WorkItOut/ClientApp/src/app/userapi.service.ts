@@ -15,6 +15,7 @@ export class UserapiService {
 	Favorites = null;
 
 	User = null;
+	userLogs = null;
 
 	//User = {
 	//	firstname: "",
@@ -65,18 +66,20 @@ export class UserapiService {
 			this.User = result;
 			this.udpateHeight();
 			this.updateAgeAndDOB();
+			this.getUserLogs();
 		}, error => {
 			console.log(error);
 		});
 	}
 
 	WorkoutLog(workoutLog) {
-		debugger;
+
 		this.http.post<any>('user/addlog', workoutLog).subscribe(result => {
 			console.log(result);
 		}, error => {
 			console.log(error);
 		});
+		this.getUserLogs();
 	}
 
 	AddUser(adduser) {
@@ -189,6 +192,16 @@ export class UserapiService {
 			console.log(error);
 
 		})
+	}
+
+
+	getUserLogs() {
+		this.http.get<any>(`user/getlogs/${this.User.userId}`).subscribe(result => {
+			console.log(result);
+			this.userLogs = result;
+		}, error => {
+			console.log(error);
+		});
 	}
 
 }
