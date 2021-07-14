@@ -93,11 +93,12 @@ export class UserapiService {
 	}
 
 
-	GetUserJoin() {
-		this.http.get<any>('user/joindb').subscribe(result => {
+	GetUserJoin(id) {
+		this.http.get<any>(`user/joindb/${id}`).subscribe(result => {
 			debugger;
 			console.log(result);
 			this.joinDb = result;
+			debugger;
 		}, error => {
 			console.log(error);
 		});
@@ -114,7 +115,7 @@ export class UserapiService {
 
 
 	GetFavorites(id) {
-		this.http.get<any>(`user/GetFavorites/userId ${id}`).subscribe(result => {
+		this.http.get<any>(`user/GetFavorites/${id}`).subscribe(result => {
 			this.Favorites = result;
 		}, error => {
 			console.log(error);
