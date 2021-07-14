@@ -98,10 +98,10 @@ namespace WorkItOut.Models
 			db.Insert(log);
 		}
 
-		public static List<WorkoutLog> GetWorkoutLogs()
+		public static List<WorkoutLog> GetWorkoutLogs(int id)
 		{
 			// probably want to add a user id param
-			return db.GetAll<WorkoutLog>().ToList();
+			return db.Query<WorkoutLog>($"select * from workoutlog where userId = {id}").ToList();
 		}
 
 		public static void EditWorkoutLog(WorkoutLog log)

@@ -15,16 +15,14 @@ import { WorkoutapiService } from './workoutapi.service';
 import { WorkoutDetailComponent } from './workout-detail/workout-detail.component';
 import { AddWorkoutComponent } from './add-workout/add-workout.component';
 import { WorkoutLogComponent } from './workout-log/workout-log.component';
-
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserapiService } from './userapi.service';
 import { LogOutComponent } from './log-out/log-out.component';
-
 import { FavoriteWorkoutComponent } from './favorite-workout/favorite-workout.component';
-
 import { WeatherInfoComponent } from './weather-info/weather-info.component';
 import { WeatherapiService } from './weatherapi.service';
 import { DbJoinComponent } from './db-join/db-join.component';
+import { ListLogsComponent } from './list-logs/list-logs.component';
 
 
 
@@ -45,6 +43,7 @@ import { DbJoinComponent } from './db-join/db-join.component';
         WeatherInfoComponent,
         DbJoinComponent,
         FavoriteWorkoutComponent,
+        ListLogsComponent
 
 
 
@@ -67,12 +66,8 @@ import { DbJoinComponent } from './db-join/db-join.component';
             { path: 'profile', component: UserProfileComponent },
             { path: 'logworkout', component: WorkoutLogComponent },
             { path: 'logout', component: LogOutComponent },
-
-
             { path: 'join', component: DbJoinComponent },
-
             { path: 'favorites', component: FavoriteWorkoutComponent },
-
             { path: 'currentweather', component: WeatherInfoComponent }
 
 

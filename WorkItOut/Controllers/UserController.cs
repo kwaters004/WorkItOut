@@ -15,12 +15,22 @@ namespace WorkItOut.Controllers
     public class UserController : ControllerBase
 
     {
-        [HttpPost("addlog")]
+		#region WorkoutLogs
+
+		[HttpPost("addlog")]
         public bool AddToWorkoutlog(WorkoutLog newlog)
         {
             DAL.LogWorkout(newlog);
             return true;
         }
+
+        [HttpGet("GetWorkoutLogs/{id}")]
+        public List<WorkoutLog> GetWorkoutLogs(int id)
+        {
+            return DAL.GetWorkoutLogs(id);
+        }
+
+        #endregion
 
         [HttpPost("isuser")]
         public string Isuser([FromBody] User user)
@@ -31,11 +41,7 @@ namespace WorkItOut.Controllers
         }
 
 
-        [HttpGet("GetWorkoutLogs/{id}")]
-        public List<WorkoutLog> GetWorkoutLogs()
-        {
-            return DAL.GetWorkoutLogs();
-        }
+       
 
         [HttpDelete("remove/{workoutId}")]
         public bool RemoveFromWorkOutlog(int id)
