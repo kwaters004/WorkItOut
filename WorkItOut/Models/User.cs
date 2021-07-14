@@ -20,5 +20,7 @@ namespace WorkItOut.Models
         public string userName { get; set; }
         public int height { get; set; }
         public string gender { get; set; }
+        public string password { get; set; }
+        
     }
 }

@@ -79,13 +79,13 @@
 				Initial Weight:
 			</div>
 			<div>
-				<input [(ngModel)]="userapi.User.initialWeight" /> lbs.
+				<input type="number" [(ngModel)]="userapi.User.initialWeight" /> lbs.
 			</div>
 			<div class="profileLabel">
 				Date of Birth:
 			</div>
 			<div>
-				<input type="date" (input)="newDOB=parseDate($event.target.value)" [value]="userapi.dateInputFormat | date: 'yyyy-MM-dd'"/>
+				<input type="date" (ngModelChange)="newDOB = $event" [ngModel]="userapi.User.dob | date: 'yyyy-MM-dd'"/>
 			</div>
 			<div class="profileLabel">
 				Email:

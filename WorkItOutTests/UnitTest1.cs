@@ -20,7 +20,7 @@ namespace WorkItOutTests
 		[Fact]
 		public void GetFavoritesTest()
 		{
-			List<Favorites> faves = DAL.GetFavorites();
+			List<Favorites> faves = DAL.GetFavorites(1);
 			Assert.Equal(1, faves[0].favoriteId);
 		}
 

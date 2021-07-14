@@ -14,7 +14,21 @@ export class UserapiService {
 
 	Favorites = null;
 
-	User = null;
+/*	User = null;*/
+
+	User = {
+		firstname: "",
+		lastname: "",
+		dob: null,
+		initialWeight: 0,
+		email: "",
+		userName: "",
+		height: 0,
+		gender: "",
+		userId: null,
+		password: ""
+	}
+
 
 //User = {
 	//	userId: null,
@@ -46,7 +60,7 @@ export class UserapiService {
 	}
 
 	clickLogin(user) {
-		this.getIPAddress();
+		
 		this.http.post<any>('user/isuser', user).subscribe(result => {
 			this.User = result;
 			this.udpateHeight();
@@ -118,11 +132,15 @@ export class UserapiService {
 	//}
 
 	updateUser() {
+		debugger;
+		this.updateAgeAndDOB();
 		this.User.height = this.heightFt * 12 + this.heightInch;
-		this.http.post<any>('user/updateUser', this.User).subscribe(result => {
+		this.http.post<any>('/user/edit', this.User).subscribe(result => {
+			debugger;
 			console.log(result);
 		}, error => {
-			console.log(error);
+				console.log(error)
+				console.log("didn't work");					;
 		});
 	}
 
@@ -161,10 +179,8 @@ export class UserapiService {
 
 
 	getIPAddress() {
-		debugger;
-		this.http.get<any>('https://api.ipify.org/?format=json').subscribe(result => {
-			debugger;
 
+		this.http.get<any>('https://api.ipify.org/?format=json').subscribe(result => {
 			this.theIp = result;
 		}, error => {
 			console.log(error);
