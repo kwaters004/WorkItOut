@@ -14,6 +14,7 @@ export class UserProfileComponent {
 /** user-profile ctor */
 
 
+    userLogs = null;
 
 
     userAge = null;
@@ -116,4 +117,8 @@ export class UserProfileComponent {
         }
         return null;
     }
+
+    getUserLogs() {
+        this.userapi.getUserLogs();
+	}
 }

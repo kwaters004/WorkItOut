@@ -24,7 +24,7 @@ namespace WorkItOut.Controllers
             return true;
         }
 
-        [HttpGet("GetWorkoutLogs/{id}")]
+        [HttpGet("getlogs/{id}")]
         public List<WorkoutLog> GetWorkoutLogs(int id)
         {
             return DAL.GetWorkoutLogs(id);

@@ -1,1 +1,6 @@
-﻿<div style="border: 1px solid red">list-logs Component</div>
+<div  *ngFor="let log of userapi.userLogs">
+
+	<app-log-info [aLog]="log" class="listLog"></app-log-info>
+
+
+</div>

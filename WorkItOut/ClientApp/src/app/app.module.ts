@@ -23,6 +23,7 @@ import { WeatherInfoComponent } from './weather-info/weather-info.component';
 import { WeatherapiService } from './weatherapi.service';
 import { DbJoinComponent } from './db-join/db-join.component';
 import { ListLogsComponent } from './list-logs/list-logs.component';
+import { LogInfoComponent } from './log-info/log-info.component';
 
 
 
@@ -43,7 +44,8 @@ import { ListLogsComponent } from './list-logs/list-logs.component';
         WeatherInfoComponent,
         DbJoinComponent,
         FavoriteWorkoutComponent,
-        ListLogsComponent
+        ListLogsComponent,
+        LogInfoComponent,
 
 
 
