@@ -199,7 +199,6 @@ span {
 
 .content {
     position: fixed;
-    
     background: rgba(0, 0, 0, 0.5);
     color: greenyellow;
     width: 35%;
@@ -207,7 +206,6 @@ span {
     display: inline-block;
     margin-left: -20%;
     margin-right: 0%;
-   
 }
 
  #myBtn:hover {
@@ -229,6 +227,10 @@ span {
     color: mediumaquamarine;
 }
 
+.colorlink3 {
+
+    color:mediumaquamarine;
+}
 .listLog{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -241,4 +243,8 @@ span {
     font-size: 1rem;
 }
 
+.summaryparagraph {
+    font-family: Georgia;
+    font-size: 100px;
+}
 
