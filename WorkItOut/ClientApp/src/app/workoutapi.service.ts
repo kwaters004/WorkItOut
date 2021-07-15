@@ -49,6 +49,7 @@ export class WorkoutapiService {
         }, error => {
             console.log(error);
         });
-	}
+    }
+
 
   }

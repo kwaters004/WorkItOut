@@ -1,4 +1,5 @@
-﻿import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { UserapiService } from '../userapi.service';
 
 @Component({
     selector: 'app-list-logs',
@@ -7,8 +8,11 @@
 })
 /** list-logs component*/
 export class ListLogsComponent {
-    /** list-logs ctor */
-    constructor() {
 
+
+
+/** list-logs ctor */
+    constructor(private userapi: UserapiService) {
+        
     }
 }

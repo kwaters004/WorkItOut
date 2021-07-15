@@ -23,6 +23,8 @@ import { WeatherInfoComponent } from './weather-info/weather-info.component';
 import { WeatherapiService } from './weatherapi.service';
 import { DbJoinComponent } from './db-join/db-join.component';
 import { ListLogsComponent } from './list-logs/list-logs.component';
+import { LogInfoComponent } from './log-info/log-info.component';
+import { LearnMoreComponent } from './learn-more/learn-more.component';
 
 
 
@@ -44,7 +46,14 @@ import { ListLogsComponent } from './list-logs/list-logs.component';
         DbJoinComponent,
         FavoriteWorkoutComponent,
         ListLogsComponent,
-        
+        LogInfoComponent,
+        LearnMoreComponent
+
+
+
+
+
+
 
     ],
     imports: [
@@ -66,8 +75,8 @@ import { ListLogsComponent } from './list-logs/list-logs.component';
             { path: 'logout', component: LogOutComponent },
             { path: 'join', component: DbJoinComponent },
             { path: 'favorites', component: FavoriteWorkoutComponent },
-            { path: 'currentweather', component: WeatherInfoComponent }
-
+            { path: 'currentweather', component: WeatherInfoComponent },
+            {path: 'learnmore',component:LearnMoreComponent}
 
           
         ])

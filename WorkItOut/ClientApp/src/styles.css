@@ -125,10 +125,10 @@ align-self: center;
 
     }
 
-    .LogFaveArea > div:hover {
+/*    .LogFaveArea > div:hover {
         font-size: 2.5rem;
         filter: drop-shadow(2px 2px 4px);
-    }
+    }*/
 
 app-user-profile{
 
@@ -199,7 +199,6 @@ span {
 
 .content {
     position: fixed;
-    
     background: rgba(0, 0, 0, 0.5);
     color: greenyellow;
     width: 35%;
@@ -207,7 +206,6 @@ span {
     display: inline-block;
     margin-left: -20%;
     margin-right: 0%;
-   
 }
 
  #myBtn:hover {
@@ -228,3 +226,25 @@ span {
 .colorlink2 {
     color: mediumaquamarine;
 }
+
+.colorlink3 {
+
+    color:mediumaquamarine;
+}
+.listLog{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-color: grey;
+    margin: 10px;
+    
+}
+
+.listLog > div{
+    font-size: 1rem;
+}
+
+.summaryparagraph {
+    font-family: Georgia;
+    font-size: 100px;
+}
+
