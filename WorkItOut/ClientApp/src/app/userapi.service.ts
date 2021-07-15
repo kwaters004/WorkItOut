@@ -15,6 +15,7 @@ export class UserapiService {
 	Favorites = null;
 
 	User = null;
+	userLogs = null;
 
 	//User = {
 	//	firstname: "",
@@ -65,18 +66,20 @@ export class UserapiService {
 			this.User = result;
 			this.udpateHeight();
 			this.updateAgeAndDOB();
+			this.getUserLogs();
 		}, error => {
 			console.log(error);
 		});
 	}
 
 	WorkoutLog(workoutLog) {
-		debugger;
+
 		this.http.post<any>('user/addlog', workoutLog).subscribe(result => {
 			console.log(result);
 		}, error => {
 			console.log(error);
 		});
+		this.getUserLogs();
 	}
 
 	AddUser(adduser) {
@@ -123,7 +126,14 @@ export class UserapiService {
 		});
 	}
 
+	Isuser(id) {
+		if (this.Isuser)
+		{
+			console.log(error)
+			console.log("user does not exist")
+		}
 
+	}
 	//GetUser(user) {
 	//	this.http.post<any>('user/getUser', user).subscribe(result => {
 	//		this.User = result;
@@ -181,6 +191,7 @@ export class UserapiService {
 	}
 
 
+
 	getIPAddress() {
 
 		this.http.get<any>('https://api.ipify.org/?format=json').subscribe(result => {
@@ -189,6 +200,16 @@ export class UserapiService {
 			console.log(error);
 
 		})
+	}
+
+
+	getUserLogs() {
+		this.http.get<any>(`user/getlogs/${this.User.userId}`).subscribe(result => {
+			console.log(result);
+			this.userLogs = result;
+		}, error => {
+			console.log(error);
+		});
 	}
 
 }

@@ -28,6 +28,7 @@ export class WorkoutDetailComponent implements OnInit {
     ) {
         //debugger;
         //console.log(this.wrkout);
+
     }
 
     ngOnInit() {

@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
 		email: "",
 	}
 
+
 	constructor(
 		private workoutService: WorkoutapiService,
 		private userapi: UserapiService, private route: Router) {

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -23,6 +23,8 @@ import { WeatherInfoComponent } from './weather-info/weather-info.component';
 import { WeatherapiService } from './weatherapi.service';
 import { DbJoinComponent } from './db-join/db-join.component';
 import { ListLogsComponent } from './list-logs/list-logs.component';
+import { LogInfoComponent } from './log-info/log-info.component';
+import { LearnMoreComponent } from './learn-more/learn-more.component';
 
 
 
@@ -43,7 +45,10 @@ import { ListLogsComponent } from './list-logs/list-logs.component';
         WeatherInfoComponent,
         DbJoinComponent,
         FavoriteWorkoutComponent,
-        ListLogsComponent
+        ListLogsComponent,
+        LogInfoComponent,
+        LearnMoreComponent
+
 
 
 
@@ -55,6 +60,8 @@ import { ListLogsComponent } from './list-logs/list-logs.component';
         BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
         HttpClientModule,
         FormsModule,
+        ReactiveFormsModule,
+
         RouterModule.forRoot([
             { path: '', component: HomeComponent, pathMatch: 'full' },
             { path: 'counter', component: CounterComponent },
@@ -68,8 +75,8 @@ import { ListLogsComponent } from './list-logs/list-logs.component';
             { path: 'logout', component: LogOutComponent },
             { path: 'join', component: DbJoinComponent },
             { path: 'favorites', component: FavoriteWorkoutComponent },
-            { path: 'currentweather', component: WeatherInfoComponent }
-
+            { path: 'currentweather', component: WeatherInfoComponent },
+            {path: 'learnmore',component:LearnMoreComponent}
 
           
         ])

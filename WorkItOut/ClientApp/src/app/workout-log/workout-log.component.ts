@@ -42,7 +42,6 @@ export class WorkoutLogComponent {
         this.workoutlog.workoutId = this.workoutId; 
 
         let newDate = new Date();
-        debugger;
 
         //this is saving the date and time of UTC
         this.workoutlog.timeOfWorkout = newDate.toISOString();
