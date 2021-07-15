@@ -1,0 +1,62 @@
+
+<style>
+
+.logColumns{
+	display: grid;
+	grid-template-columns: auto auto;
+	max-width: 40%;
+}
+
+
+</style>
+
+<div class="logColumns">
+	<label>Workout Name: </label>
+	<div>{{theWorkout.workoutname}}</div>
+
+	<label>Date and Time Completed: </label>
+	<div>{{theLog.timeOfWorkout}}</div>
+
+
+</div>
+
+
+
+
+<div *ngIf="!sh" class="logColumns">
+
+
+
+	<label>Reps: </label>
+	<div>{{theLog.reps}}</div>
+
+	<label>Sets: </label>
+	<div>{{theLog.sets}}</div>
+
+	<label>How you felt (0-10): </label>
+	<div>{{theLog.howDoYouFeel}}</div>
+
+</div>
+<div *ngIf="sh" class="logColumns">
+	<label>Reps:</label><input type="number" (ngModelChange)="updatedLog.reps = $event" [ngModel]="updatedLog.reps" />
+	<label>Sets:</label><input type="number" (ngModelChange)="updatedLog.sets = $event" [ngModel]="updatedLog.sets" />
+	<label>How you felt (0-10): </label><input type="number" (ngModelChange)="updatedLog.howDoYouFeel = $event" [ngModel]="updatedLog.howDoYouFeel" />
+
+
+
+
+
+
+
+
+
+	<button (click)="EditLog()" style="grid-column: span 2">Save Changes</button>
+<button (click)="CancelUpdate()" style="grid-column: span 2">Cancel</button>
+</div>
+
+
+
+
+<div>
+<button *ngIf="!sh" (click)="EditShow()">Edit</button>
+</div>

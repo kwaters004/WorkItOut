@@ -59,7 +59,7 @@
 <div *ngIf="userapi.User">
 	<input  type="checkbox" [(ngModel)]="isFave" (change)="changeCheckbox()" /> Favorite
 </div>
-	<button (click)="showHideEdit()">Edit Workout</button>
+	<button (click)="showHideEdit()" *ngIf="userapi.User">Edit Workout</button>
 
 	<!--*ngIf="userapi.User.userId" -->
 

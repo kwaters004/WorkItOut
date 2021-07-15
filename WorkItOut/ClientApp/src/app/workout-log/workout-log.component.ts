@@ -46,8 +46,13 @@ export class WorkoutLogComponent {
         //this is saving the date and time of UTC
         this.workoutlog.timeOfWorkout = newDate.toISOString();
 
+
+
+
+
         
         debugger;
+
         this.userapi.WorkoutLog(this.workoutlog)
     }
 

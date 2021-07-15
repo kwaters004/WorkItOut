@@ -2,6 +2,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { error } from '@angular/compiler/src/util';
+import { WorkoutapiService } from './workoutapi.service';
 
 
 @Injectable()
@@ -56,8 +57,8 @@ export class UserapiService {
 		ip: ''
 	}
 	
-	constructor(private http: HttpClient, private route: Router) {
-
+	constructor(private http: HttpClient, private route: Router, private workoutapi: WorkoutapiService) {
+		this.workoutapi.GetWorkouts();
 	}
 
 	clickLogin(user) {
@@ -67,6 +68,7 @@ export class UserapiService {
 			this.udpateHeight();
 			this.updateAgeAndDOB();
 			this.getUserLogs();
+			
 		}, error => {
 			console.log(error);
 		});
@@ -208,6 +210,17 @@ export class UserapiService {
 		this.http.get<any>(`user/getlogs/${this.User.userId}`).subscribe(result => {
 			console.log(result);
 			this.userLogs = result;
+		}, error => {
+			console.log(error);
+		});
+	}
+
+	editLog(aLog) {
+
+		console.log(aLog);
+		this.http.post<any>('user/editlog', aLog).subscribe(result => {
+
+			console.log(result);
 		}, error => {
 			console.log(error);
 		});
