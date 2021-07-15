@@ -48,6 +48,11 @@ export class WorkoutLogComponent {
 
 
 
+
+
+        
+        debugger;
+
         this.userapi.WorkoutLog(this.workoutlog)
     }
 

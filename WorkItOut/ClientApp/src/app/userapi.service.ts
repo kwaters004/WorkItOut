@@ -78,6 +78,7 @@ export class UserapiService {
 		debugger;
 		this.http.post<any>('user/addlog', workoutLog).subscribe(result => {
 			console.log(result);
+			this.getUserLogs();
 		}, error => {
 			console.log(error);
 		});
