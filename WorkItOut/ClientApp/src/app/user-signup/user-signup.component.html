@@ -1,7 +1,9 @@
 <h1>Sign Up</h1>
 <!--<div style="width: 50%">-->
+<div [formGroup]="signup_form">
 <div class="attributeGroup">
 
+	<div class="form-group">
 
 	<label>First Name:</label>
 	<div class="warningDiv">
@@ -20,7 +22,6 @@
 	<div class="warningDiv">
 		<input required type="date" [(ngModel)]="signup.dob" />
 		<label class="warning">{{dobWarn}}</label>
-
 	</div>
 
 	<label>Weight:</label>
@@ -31,42 +32,43 @@
 
 	<label>Email:</label>
 	<div class="warningDiv">
-		<input required type="email" [(ngModel)]="signup.email" />
+		<input required type="email" [(ngModel)]="signup.email" class="from-control" formControlName="email">
+		<span class="text-danger" *ngIf="signup_form.controls['email'].hasError('pattern') && (signup_form.controls['email'].dirty || signup_form.controls['email'].touched)">Please enter valid email address</span>
 		<label class="warning">{{emailWarn}}</label>
 	</div>
 
 	<label>userName:</label>
 	<div class="warningDiv">
-	<input required type="text" [(ngModel)]="signup.userName" />
-	<label class="warning">{{userNameWarn}}</label>
-</div>
+		<input required type="text" [(ngModel)]="signup.userName" />
+		<label class="warning">{{userNameWarn}}</label>
+	</div>
 
 	<label>Height:</label>
 	<div class="warningDiv">
-	<div>
-		<input required style="width: 20%" type="number" min="2" max="8" [(ngModel)]="heightFt" /> feet
-		<input style="width: 20%" type="number" [(ngModel)]="heightInch" min="0" max="11" /> inches
-		
+		<div>
+			<input required style="width: 20%" type="number" min="2" max="8" [(ngModel)]="heightFt" /> feet
+			<input style="width: 20%" type="number" [(ngModel)]="heightInch" min="0" max="11" /> inches
+
+		</div>
+		<label class="warning">{{ heightWarn }}</label>
 	</div>
-	<label class="warning">{{ heightWarn }}</label>
-</div>
 
 	<label>Gender:</label>
 	<div class="warningDiv">
-	<select required [(ngModel)]="signup.gender">
-		<option value="Male">Male</option>
-		<option value="Female">Female</option>
-		<option value="Other">Other</option>
-		<option value="Prefer Not to Answer">Prefer Not to Answer</option>
-	</select>
-	<label class="warning">{{genderWarn}}</label>
-</div>
+		<select required [(ngModel)]="signup.gender">
+			<option value="Male">Male</option>
+			<option value="Female">Female</option>
+			<option value="Other">Other</option>
+			<option value="Prefer Not to Answer">Prefer Not to Answer</option>
+		</select>
+		<label class="warning">{{genderWarn}}</label>
+	</div>
 
 	<button (click)="AddUser()" style="grid-column: 1/3">Register</button>
 
 
 
 </div>
-
-
+	</div>
+	</div>
 <!--</div>-->
