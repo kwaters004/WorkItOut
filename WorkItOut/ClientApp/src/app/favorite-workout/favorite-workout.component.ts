@@ -11,7 +11,7 @@ import { UserapiService } from '../userapi.service';
 export class FavoriteWorkoutComponent {
     /** favorite-workout ctor */
     constructor(private userapi: UserapiService, private route: Router) {
-        this.userapi.GetFavorites(this.userapi.User.userId);
+        
 
     }
 

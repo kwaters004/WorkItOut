@@ -69,7 +69,7 @@ import { LogPageComponent } from './log-page/log-page.component';
             { path: 'login', component: HomeComponent },
             { path: 'wrkouts', component: ListWorkoutsComponent },
             { path: 'profile', component: UserProfileComponent },
-            { path: 'logworkout', component: WorkoutLogComponent },
+            { path: 'logworkout/:id', component: WorkoutLogComponent },
             { path: 'logout', component: LogOutComponent },
             { path: 'join', component: DbJoinComponent },
             { path: 'favorites', component: FavoriteWorkoutComponent },

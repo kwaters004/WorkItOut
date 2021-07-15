@@ -7,9 +7,9 @@
 
 </div>
 <div *ngIf="userapi.User">
-	<button *ngIf="!shLog" (click)="showLog()" >Log This workout</button>
+	<button (click)="GoLog()" >Log This workout</button>
 
-	<app-workout-log *ngIf="shLog" [userId]="userapi.User.userId" [workoutId]="wrkout.workoutId" (hideLog)="showLog()"></app-workout-log>
+
 </div>
 
 </div>

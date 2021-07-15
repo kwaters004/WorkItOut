@@ -24,9 +24,11 @@ namespace WorkItOut.Models
             // will want to add in user id param
             db.Insert(fave);
         }
-        public static void DeleteFavorite(Favorites fave)
+        public static void DeleteFavorite(int id)
         {
-            // will want to add user id column to database          
+			// will want to add user id column to database
+			Favorites fave = new Favorites();
+			fave.favoriteId = id;
             db.Delete(fave);
         }
 

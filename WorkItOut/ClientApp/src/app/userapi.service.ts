@@ -13,7 +13,7 @@ export class UserapiService {
 
 	joinDb = null;
 
-	Favorites = null;
+	Favorites = [];
 
 	User = null;
 	userLogs = null;
@@ -65,17 +65,19 @@ export class UserapiService {
 		
 		this.http.post<any>('user/isuser', user).subscribe(result => {
 			this.User = result;
-			this.udpateHeight();
+			this.updateHeight();
 			this.updateAgeAndDOB();
 			this.getUserLogs();
 			
+
+
 		}, error => {
 			console.log(error);
 		});
 	}
 
 	WorkoutLog(workoutLog) {
-		debugger;
+
 		this.http.post<any>('user/addlog', workoutLog).subscribe(result => {
 			console.log(result);
 			this.getUserLogs();
@@ -87,10 +89,10 @@ export class UserapiService {
 
 	AddUser(adduser) {
 		this.User = adduser;
-		this.udpateHeight();
+		this.updateHeight();
 		this.updateAgeAndDOB();
 		this.CheckLoggedIn();
-		debugger;
+
 		this.http.post<any>('user/addUser', adduser).subscribe(result => {
 			console.log(result);
 			
@@ -112,18 +114,28 @@ export class UserapiService {
     }//me
 
 	AddFavorite(addFave) {
-		debugger;
+
 		this.http.post<any>('user/addFave', {workoutId: addFave, userId: this.User.userId }).subscribe(result => {
 			console.log(result);
+
 		}, error => {
 			console.log(error);
 		});
 	}
 
+	RemoveFavorite(id) {
+		this.http.delete<any>(`user/removeFave/${id}`).subscribe(result => {
+			console.log(result);
 
-	GetFavorites(id) {
-		this.http.get<any>(`user/GetFavorites/${id}`).subscribe(result => {
+		}, error => {
+				console.log(error);
+		})
+	}
+
+	GetFavorites() {
+		this.http.get<any>(`user/GetFavorites/${this.User.userId}`).subscribe(result => {
 			this.Favorites = result;
+
 		}, error => {
 			console.log(error);
 		});
@@ -178,7 +190,7 @@ export class UserapiService {
 	}
 
 
-	udpateHeight() {
+	updateHeight() {
 		this.heightFt = Math.floor(this.User.height / 12);
 		this.heightInch = this.User.height % 12;
 	}
@@ -210,6 +222,7 @@ export class UserapiService {
 		this.http.get<any>(`user/getlogs/${this.User.userId}`).subscribe(result => {
 			console.log(result);
 			this.userLogs = result;
+			this.GetFavorites();
 		}, error => {
 			console.log(error);
 		});
