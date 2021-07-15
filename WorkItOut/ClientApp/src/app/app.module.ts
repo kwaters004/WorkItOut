@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
@@ -25,6 +26,7 @@ import { DbJoinComponent } from './db-join/db-join.component';
 import { ListLogsComponent } from './list-logs/list-logs.component';
 import { LogInfoComponent } from './log-info/log-info.component';
 import { LearnMoreComponent } from './learn-more/learn-more.component';
+import { LogPageComponent } from './log-page/log-page.component';
 
 
 
@@ -47,13 +49,8 @@ import { LearnMoreComponent } from './learn-more/learn-more.component';
         FavoriteWorkoutComponent,
         ListLogsComponent,
         LogInfoComponent,
-        LearnMoreComponent
-
-
-
-
-
-
+        LearnMoreComponent,
+        LogPageComponent
 
     ],
     imports: [
@@ -61,6 +58,7 @@ import { LearnMoreComponent } from './learn-more/learn-more.component';
         HttpClientModule,
         FormsModule,
         ReactiveFormsModule,
+        
 
         RouterModule.forRoot([
             { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -76,7 +74,9 @@ import { LearnMoreComponent } from './learn-more/learn-more.component';
             { path: 'join', component: DbJoinComponent },
             { path: 'favorites', component: FavoriteWorkoutComponent },
             { path: 'currentweather', component: WeatherInfoComponent },
-            {path: 'learnmore',component:LearnMoreComponent}
+            { path: 'learnmore', component: LearnMoreComponent },
+            { path: 'yourlog/:id', component: LogPageComponent },
+            
 
           
         ])

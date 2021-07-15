@@ -1,3 +1,9 @@
+
+<div>
+Workout Name
+</div>
+
+
 <div>
 	Reps
 </div>
@@ -8,14 +14,12 @@
 	How you felt
 </div>
 <div>
-	WorkoutId
-</div>
-<div>
 	Date Completed
 </div>
 
-
-
+<div>
+{{theWorkout.workoutname}}
+</div>
 
 
 <div>
@@ -27,9 +31,12 @@
 <div>
 	{{aLog.howDoYouFeel}}
 </div>
-<div>
-	{{aLog.workoutId}}
-</div>
+
 <div>
 	{{dateStr}}
+</div>
+
+<div style="grid-column: span 4">
+
+<button (click)="GoToLogPage()">Click Me</button>
 </div>

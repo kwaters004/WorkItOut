@@ -48,10 +48,11 @@ namespace WorkItOut.Controllers
             return true;
         }
 
-        [HttpPost]
-        public static void EditWorkoutLog(WorkoutLog log)
+        [HttpPost("editlog")]
+        public void EditWorkoutLog([FromBody] WorkoutLog log)
         {
             DAL.EditWorkoutLog(log);
+                
         }
 
         [HttpGet("GetFavorites/{id}")]
