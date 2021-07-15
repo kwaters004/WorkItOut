@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from 'oidc-client';
 import { UserapiService } from '../userapi.service';
 
 @Component({
@@ -32,12 +34,16 @@ export class WorkoutLogComponent {
 
 /** workout-log ctor */
 
-    constructor(private userapi: UserapiService) { }
+    constructor(private userapi: UserapiService, private router: Router) {
+        if (!userapi.User) {
+            this.CancelLog();
+		}
+    }
    
 
     WorkoutLog() {
 
-        this.HideLog();
+        this.CancelLog();
         this.workoutlog.userId = this.userId;
         this.workoutlog.workoutId = this.workoutId; 
 
@@ -62,7 +68,7 @@ export class WorkoutLogComponent {
     }
 
     CancelLog() {
-        this.HideLog();
+        this.router.navigateByUrl('/');
 	}
 }
 

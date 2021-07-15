@@ -77,10 +77,10 @@ namespace WorkItOut.Controllers
             return true;
         }
 
-        [HttpDelete("remove")]
-        public bool RemoveFavorites(Favorites fav)
+        [HttpDelete("removeFave/{id}")]
+        public bool RemoveFavorites(int id)
         {
-            DAL.DeleteFavorite(fav);
+            DAL.DeleteFavorite(id);
             return true;
         }
 
