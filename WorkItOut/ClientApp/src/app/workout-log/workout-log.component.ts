@@ -47,7 +47,7 @@ export class WorkoutLogComponent {
         this.workoutlog.timeOfWorkout = newDate.toISOString();
 
         
-
+        debugger;
         this.userapi.WorkoutLog(this.workoutlog)
     }
 
