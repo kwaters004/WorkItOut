@@ -79,7 +79,7 @@ namespace WorkItOutTests
 		[Fact]
 		public void GetWorkoutLogs()
 {
-			List<WorkoutLog> logs = DAL.GetWorkoutLogs();
+			List<WorkoutLog> logs = DAL.GetWorkoutLogs(1);
 			Assert.Equal(5, logs[0].reps);
 		}
 

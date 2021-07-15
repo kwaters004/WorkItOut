@@ -18,6 +18,13 @@
 
 	</div>
 
+	<label>Password:</label>
+	<div class="warningDiv">
+		<input required type="text" [(ngModel)]="signup.password"/>
+		<label class="warning"> {{ passwrdwarn }}</label>
+
+	</div>
+
 	<label>Date of Birth:</label>
 	<div class="warningDiv">
 		<input required type="date" [(ngModel)]="signup.dob" placeholder="MD/DD/YY" [ngModelOptions]="{standalone: true}" />
