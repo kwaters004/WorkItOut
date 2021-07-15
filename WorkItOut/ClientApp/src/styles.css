@@ -10,7 +10,7 @@ code {
 }
 
 body {
-  
+ 
  }
 
 
@@ -246,5 +246,16 @@ span {
 .summaryparagraph {
     font-family: Georgia;
     font-size: 100px;
+}
+
+
+.welcomepage {
+    background-color: mediumaquamarine;
+    text-align: center;
+    padding: 30px;
+    margin:auto;
+    width: 1080px;
+    height: 2000px;
+    
 }
 
