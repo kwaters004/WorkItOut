@@ -41,8 +41,6 @@ namespace WorkItOut.Controllers
         }
 
 
-       
-
         [HttpDelete("remove/{workoutId}")]
         public bool RemoveFromWorkOutlog(int id)
         {

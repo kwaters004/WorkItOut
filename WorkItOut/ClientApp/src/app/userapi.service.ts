@@ -126,7 +126,14 @@ export class UserapiService {
 		});
 	}
 
+	Isuser(id) {
+		if (this.Isuser)
+		{
+			console.log(error)
+			console.log("user does not exist")
+		}
 
+	}
 	//GetUser(user) {
 	//	this.http.post<any>('user/getUser', user).subscribe(result => {
 	//		this.User = result;
@@ -182,6 +189,7 @@ export class UserapiService {
 			this.$isLoggedIn.emit(0);
 		}
 	}
+
 
 
 	getIPAddress() {
