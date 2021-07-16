@@ -72,7 +72,8 @@ export class UserapiService {
 			this.updateHeight();
 			this.updateAgeAndDOB();
 			this.getUserLogs();
-			
+			// running these functions because it means the connection is closed
+
 
 
 		}, error => {
@@ -123,7 +124,7 @@ export class UserapiService {
 
 		this.http.post<any>('user/addFave', {workoutId: addFave, userId: this.User.userId }).subscribe(result => {
 			console.log(result);
-			this.createFavesList();
+			this.GetFavorites();
 
 		}, error => {
 			console.log(error);
@@ -133,7 +134,8 @@ export class UserapiService {
 	RemoveFavorite(id) {
 		this.http.delete<any>(`user/removeFave/${id}`).subscribe(result => {
 			console.log(result);
-			this.createFavesList();
+			debugger;
+			this.GetFavorites();
 
 		}, error => {
 				console.log(error);
@@ -147,7 +149,9 @@ export class UserapiService {
 			this.createFavesList();
 
 		}, error => {
-			console.log(error);
+				debugger;
+				console.log(error);
+				this.Favorites = [];
 		});
 	}
 
@@ -250,6 +254,12 @@ export class UserapiService {
 	}
 
 	createFavesList() {
+		debugger;
+		if (this.Favorites.length == 0) {
+			this.favesList = [];
+		}
+		else {
+			this.favesList = [];
 		for (let i = 0; i < this.workoutapi.workouts.length; i++) {
 			for (let n = 0; n < this.Favorites.length; n++) {
 				if (this.workoutapi.workouts[i].workoutId == this.Favorites[n].workoutId) {
@@ -257,6 +267,9 @@ export class UserapiService {
 				}
 			}
 		}
+		}
+		console.log(this.favesList);
+
 	}
 
 }
