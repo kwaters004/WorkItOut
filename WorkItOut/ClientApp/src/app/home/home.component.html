@@ -3,7 +3,8 @@
     <source src="/videos/180419_Boxing_15_09.mp4" type="video/mp4"width="700" height="700">
 </video>
 
-<div [formGroup]="checkingpassword">
+<!--<div [formGroup]="checkingpassword">-->
+<div>
     <div class="content">
         <img src="/images/WorkitOut.png" width="180" height="150" />
         <h3>Please Log in</h3>
@@ -12,8 +13,9 @@
     <input [(ngModel)]="user.email" type="text" />
     <br />
     Password:
-    <input [(ngModel)]="password" type="password" />
+    <input [(ngModel)]="user.password" type="password" />
     <button (click)="clickLogin()">Login</button> <br />
+    <div *ngIf="passwordWarn != ''"><label style="color: red">{{passwordWarn}}</label><br/></div>
     <div class="summary">
         Work it out is here to guide you and help you stay fit.
 

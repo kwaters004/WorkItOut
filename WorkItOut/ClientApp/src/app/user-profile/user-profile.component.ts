@@ -104,7 +104,7 @@ export class UserProfileComponent {
 
     loggedOut() {
 
-        if (this.userapi.User == null) {
+        if (this.userapi.User == null || this.userapi.User.password == null) {
         this.route.navigateByUrl("/");
         }
 	}

@@ -47,7 +47,7 @@ namespace WorkItOut.Models
 
 		public static User ConfirmUser(User user)
         {
-			List<User> Ur = db.Query<User>($"select * from user where email = '{user.email}'").ToList();
+			List<User> Ur = db.Query<User>($"select * from user where email = '{user.email}' and password = '{user.password}'").ToList();
 			return Ur[0];
         }
 
