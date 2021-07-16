@@ -100,7 +100,7 @@ export class UserSignupComponent {
 			return;
 		}
         if (this.signup.password == "") {
-			this.passwrdwarn = "please emter in a password"
+			this.passwrdwarn = "Please enter in a password"
         }
 		if (!this.signup.dob || this.signup.dob < this.checkDate) {
 			this.dobWarn = "Please enter a valid date of birth.";

@@ -1,82 +1,93 @@
+
+<style>
+	.form-group > label{
+		margin-bottom: unset;
+		margin-top: .5rem;
+	}
+</style>
+
+
+
+
 <h1>Sign Up</h1>
 <!--<div style="width: 50%">-->
 <div [formGroup]="signup_form">
-<div class="attributeGroup">
+	<div class="attributeGroup">
 
-	<div class="form-group">
+		<div class="form-group">
 
-	<label>First Name:</label>
-	<div class="warningDiv">
-		<input required type="text" [(ngModel)]="signup.firstname" placeholder="John" [ngModelOptions]="{standalone: true}" />
-		<label class="warning">{{ fnameWarn }}</label>
-	</div>
+			<label>First Name:</label>
+			<div class="warningDiv">
+				<input required type="text" [(ngModel)]="signup.firstname" placeholder="John" [ngModelOptions]="{standalone: true}" />
+				<label class="warning">{{ fnameWarn }}</label>
+			</div>
 
-	<label>Last Name:</label>
-	<div class="warningDiv">
-		<input required type="text" [(ngModel)]="signup.lastname" placeholder="Smith" [ngModelOptions]="{standalone: true}" />
-		<label class="warning">{{ lnameWarn }}</label>
+			<label>Last Name:</label>
+			<div class="warningDiv">
+				<input required type="text" [(ngModel)]="signup.lastname" placeholder="Smith" [ngModelOptions]="{standalone: true}" />
+				<label class="warning">{{ lnameWarn }}</label>
 
-	</div>
+			</div>
 
-	<label>Password:</label>
-	<div class="warningDiv">
-		<input required type="text" [(ngModel)]="signup.password"/>
-		<label class="warning"> {{ passwrdwarn }}</label>
+			<label>Password:</label>
+			<div class="warningDiv">
+				<input required type="password" [(ngModel)]="signup.password" [ngModelOptions]="{standalone: true}"/>
+				<label class="warning"> {{ passwrdwarn }}</label>
 
-	</div>
+			</div>
 
-	<label>Date of Birth:</label>
-	<div class="warningDiv">
-		<input required type="date" [(ngModel)]="signup.dob" placeholder="MD/DD/YY" [ngModelOptions]="{standalone: true}" />
-		<label class="warning">{{dobWarn}}</label>
-	</div>
+			<label>Date of Birth:</label>
+			<div class="warningDiv">
+				<input required type="date" [(ngModel)]="signup.dob" placeholder="MD/DD/YY" [ngModelOptions]="{standalone: true}" />
+				<label class="warning">{{dobWarn}}</label>
+			</div>
 
-	<label>Weight:</label>
-	<div class="warningDiv">
-		<input required type="number" max="500" min="70" [(ngModel)]="signup.initialWeight" placeholder="Weight" [ngModelOptions]="{standalone: true}"/>
-		<label class="warning">{{weightWarn}}</label>
-	</div>
+			<label>Weight:</label>
+			<div class="warningDiv">
+				<input required type="number" max="500" min="70" [(ngModel)]="signup.initialWeight" placeholder="Weight" [ngModelOptions]="{standalone: true}" />
+				<label class="warning">{{weightWarn}}</label>
+			</div>
 
-	<label>Email:</label>
-	<div class="warningDiv">
-		<input required type="email" [(ngModel)]="signup.email" class="from-control" formControlName="email" placeholder="example123@gmail.com">
-		<span class="text-danger" *ngIf="signup_form.controls['email'].hasError('pattern') && (signup_form.controls['email'].dirty || signup_form.controls['email'].touched)">Please enter valid email address</span>
-		<label class="warning">{{emailWarn}}</label>
-	</div>
+			<label>Email:</label>
+			<div class="warningDiv">
+				<input required type="email" [(ngModel)]="signup.email" class="from-control" formControlName="email" placeholder="example123@gmail.com">
+				<span class="text-danger" *ngIf="signup_form.controls['email'].hasError('pattern') && (signup_form.controls['email'].dirty || signup_form.controls['email'].touched)">Please enter valid email address</span>
+				<label class="warning">{{emailWarn}}</label>
+			</div>
 
-	<label>userName:</label>
-	<div class="warningDiv">
-		<input required type="text" [(ngModel)]="signup.userName" placeholder="JSmith123" [ngModelOptions]="{standalone: true}"/>
-		<label class="warning">{{userNameWarn}}</label>
-	</div>
+			<label>userName:</label>
+			<div class="warningDiv">
+				<input required type="text" [(ngModel)]="signup.userName" placeholder="JSmith123" [ngModelOptions]="{standalone: true}" />
+				<label class="warning">{{userNameWarn}}</label>
+			</div>
 
-	<label>Height:</label>
-	<div class="warningDiv">
-		<div>
-			<input required style="width: 20%" type="number" min="2" max="8" [(ngModel)]="heightFt" placeholder="Feet" [ngModelOptions]="{standalone: true}"/> feet
-			<input style="width: 20%" type="number" [(ngModel)]="heightInch" min="0" max="11" placeholder="Inches" [ngModelOptions]="{standalone: true}"/> inches
+			<label>Height:</label>
+			<div class="warningDiv">
+				<div>
+					<input required style="width: 20%" type="number" min="2" max="8" [(ngModel)]="heightFt" placeholder="Feet" [ngModelOptions]="{standalone: true}" /> feet
+					<input style="width: 20%" type="number" [(ngModel)]="heightInch" min="0" max="11" placeholder="Inches" [ngModelOptions]="{standalone: true}" /> inches
+
+				</div>
+				<label class="warning">{{ heightWarn }}</label>
+			</div>
+
+			<label>Gender:</label>
+			<div class="warningDiv">
+				<select required [(ngModel)]="signup.gender" placeholder="Gender" [ngModelOptions]="{standalone: true}">
+					<option value="" disabled selected hidden>Please Select From Dropdown</option>
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+					<option value="Other">Other</option>
+					<option value="Prefer Not to Answer">Prefer Not to Answer</option>
+				</select>
+				<label class="warning">{{genderWarn}}</label>
+			</div>
+
+			<button (click)="AddUser()" style="grid-column: 1/3">Register</button>
+
+
 
 		</div>
-		<label class="warning">{{ heightWarn }}</label>
 	</div>
-
-	<label>Gender:</label>
-	<div class="warningDiv">
-		<select required [(ngModel)]="signup.gender" placeholder="Gender" [ngModelOptions]="{standalone: true}" >
-			<option value="" disabled selected hidden>Please Select From Dropdown</option>
-			<option value="Male">Male</option>
-			<option value="Female">Female</option>
-			<option value="Other">Other</option>
-			<option value="Prefer Not to Answer">Prefer Not to Answer</option>
-		</select>
-		<label class="warning">{{genderWarn}}</label>
-	</div>
-
-	<button (click)="AddUser()" style="grid-column: 1/3">Register</button>
-
-
-
 </div>
-	</div>
-	</div>
 <!--</div>-->
