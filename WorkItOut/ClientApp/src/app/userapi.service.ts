@@ -19,7 +19,7 @@ export class UserapiService {
 	Favorites = [];
 
 	User = null;
-	userLogs = null;
+	userLogs = [];
 
 	//User = {
 	//	firstname: null,
@@ -84,10 +84,13 @@ export class UserapiService {
 	}
 
 	WorkoutLog(workoutLog) {
-
+		debugger;
+		this.userLogs.push(workoutLog);
 		this.http.post<any>('user/addlog', workoutLog).subscribe(result => {
 			console.log(result);
-			this.getUserLogs();
+			debugger;
+
+			
 		}, error => {
 			console.log(error);
 		});
@@ -235,18 +238,20 @@ export class UserapiService {
 	getUserLogs() {
 		this.http.get<any>(`user/getlogs/${this.User.userId}`).subscribe(result => {
 			console.log(result);
+			debugger;
 			this.userLogs = result;
 			this.GetFavorites();
 		}, error => {
-			console.log(error);
+				console.log(error);
+				this.userLogs = [];
 		});
 	}
 
 	editLog(aLog) {
-
-		console.log(aLog);
+/*		this.updateLogList(aLog);*/
+		this.userLogs = [];
 		this.http.post<any>('user/editlog', aLog).subscribe(result => {
-
+			this.getUserLogs();
 			console.log(result);
 		}, error => {
 			console.log(error);
@@ -271,5 +276,11 @@ export class UserapiService {
 		console.log(this.favesList);
 
 	}
+
+	//updateLogList(theLog) {
+	//	for (let i = 0; i < this.userLogs.length; i++) {
+	//		if(theLog)
+	//	}
+	//}
 
 }

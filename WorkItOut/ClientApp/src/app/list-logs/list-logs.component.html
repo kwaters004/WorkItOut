@@ -1,6 +1,9 @@
-<div  *ngFor="let log of userapi.userLogs">
 
-	<app-log-info [aLog]="log" class="listLog"></app-log-info>
+<div *ngIf="userapi.userLogs.length == 0">No Workout Logs Recorded</div>
+
+<div  *ngFor="let log of userapi.userLogs">
+	
+	<app-log-info *ngIf="userapi.userLogs.length > 0" [aLog]="log" class="listLog"></app-log-info>
 
 
 </div>

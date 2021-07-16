@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'oidc-client';
 import { UserapiService } from '../userapi.service';
 
@@ -26,25 +26,31 @@ export class WorkoutLogComponent {
 
     
 
-    @Input() userId;
-    @Input() workoutId;
+
+    workoutId: number;
     @Output() hideLog: EventEmitter<any> = new EventEmitter<any>();
 
     $isLoggedIn = new EventEmitter();
 
 /** workout-log ctor */
 
-    constructor(private userapi: UserapiService, private router: Router) {
+    constructor(private userapi: UserapiService,
+        private router: Router,
+        private route: ActivatedRoute    ) {
         if (!userapi.User) {
             this.CancelLog();
-		}
+        }
+        this.route.params.subscribe(params => {
+            this.workoutId = parseInt(params.id);
+            console.log(`Here is the workoutId: ${this.workoutId}`);
+		})
     }
    
 
     WorkoutLog() {
-
+        debugger;
         this.CancelLog();
-        this.workoutlog.userId = this.userId;
+        this.workoutlog.userId = this.userapi.User.userId;
         this.workoutlog.workoutId = this.workoutId; 
 
         let newDate = new Date();
