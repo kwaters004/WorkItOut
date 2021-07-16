@@ -4,6 +4,10 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+.nav-link{
+    color: white;
+}
+
 html {
   font-size: 14px;
 }
@@ -31,7 +35,7 @@ html {
     /* Sidebar links */
     .sidebar a {
         display: block;
-        color: black;
+        color: cornflowerblue;
         padding: 16px;
         text-decoration: none;
     }

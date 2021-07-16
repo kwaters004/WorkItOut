@@ -1,26 +1,35 @@
+<style>
+    .nav-item > a{
+        color: white;
+    }
+</style>
+
+
+
+
 <header>
     <ul class="sidebar">
         <img src="/images/WorkitOut.png" width="110" height="100" />
         <li *ngIf="logInOut == 'Log In'" class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/login']">{{logInOut}}</a>
+            <a class="nav-link " [routerLink]="['/login']">{{logInOut}}</a>
         </li>
         <li *ngIf="logInOut == 'Log Out'" class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/profile']">Profile</a>
+            <a class="nav-link " [routerLink]="['/profile']">Profile</a>
         </li>
         <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/wrkouts']">List of Workouts</a>
+            <a class="nav-link " [routerLink]="['/wrkouts']">List of Workouts</a>
         </li>
         <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/currentweather']">Current Weather</a>
+            <a class="nav-link " [routerLink]="['/currentweather']">Current Weather</a>
         </li>
         <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/join']">Join</a>
+            <a class="nav-link " [routerLink]="['/join']">Join</a>
         </li>
         <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/learnmore']">About Us</a>
+            <a class="nav-link " [routerLink]="['/learnmore']">About Us</a>
         </li>
         <li *ngIf="logInOut == 'Log Out'" class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/logout']">{{logInOut}}</a>
+            <a class="nav-link " [routerLink]="['/logout']">{{logInOut}}</a>
         </li>
     </ul>
 </header>
