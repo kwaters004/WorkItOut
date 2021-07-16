@@ -89,12 +89,12 @@ export class UserapiService {
 		this.http.post<any>('user/addlog', workoutLog).subscribe(result => {
 			console.log(result);
 			debugger;
+		this.getUserLogs();
 
 			
 		}, error => {
 			console.log(error);
 		});
-		this.getUserLogs();
 	}
 
 	AddUser(adduser) {
