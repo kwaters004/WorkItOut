@@ -14,7 +14,10 @@
             <a class="nav-link text-dark" [routerLink]="['/currentweather']">Current Weather</a>
         </li>
         <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/join']">join</a>
+            <a class="nav-link text-dark" [routerLink]="['/join']">Join</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/learnmore']">About Us</a>
         </li>
         <li *ngIf="logInOut == 'Log Out'" class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/logout']">{{logInOut}}</a>

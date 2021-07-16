@@ -244,18 +244,25 @@ span {
 }
 
 .summaryparagraph {
-    font-family: Georgia;
+    /*font-family: "Audiowide", sans-serif;*/
+     font-family: 'Bungee', cursive;
     font-size: 100px;
 }
 
 
 .welcomepage {
-    background-color: mediumaquamarine;
+    /* background-color:mediumaquamarine;*/
     text-align: center;
+    /* font-family: 'Bungee', cursive;*/
+    /*  font-family: "Audiowide", sans-serif;*/
+    font-family: 'Permanent Marker', cursive;
     padding: 30px;
-    margin:auto;
+    margin: auto;
     width: 1080px;
     height: 2000px;
-    
 }
+
+
+
+
 
