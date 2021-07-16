@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserapiService } from '../userapi.service';
 import { WorkoutapiService } from '../workoutapi.service';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -40,14 +41,20 @@ export class UserSignupComponent {
 	}
 
 	checkDate = new Date(1990, 1, 1);
+	signup_form: FormGroup;
 
 
 
-	constructor(
+	constructor(fb: FormBuilder,
 		private workoutapi: WorkoutapiService,
 		private route: Router,
 		private userapi: UserapiService
 	) {
+
+		this.signup_form = fb.group({
+			'email': [null, Validators.compose([Validators.required, Validators.pattern(/^(\d{10}|\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3}))$/)])],
+		});
+
 		this.calcHeight();
 	}
 
