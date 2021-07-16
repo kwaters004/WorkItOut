@@ -89,22 +89,22 @@ export class WorkoutDetailComponent implements OnInit {
     
 
     changeCheckbox() {
-
+        debugger;
         if (this.isFave) {
             this.AddFavorite();
-
+            debugger;
             
         }
         else {
             this.RemoveFavorite();
-
+            debugger;
 
 		}
     }
 
     AddFavorite() {
-        this.thisFave.userId = this.userapi.User.userId;
-        this.thisFave.workoutId = this.wrkout.workoutId;
+        debugger;
+        this.thisFave = { userId: this.userapi.User.userId, workoutId: this.wrkout.workoutId, favoriteId: null };
         this.userapi.AddFavorite(this.wrkout.workoutId);
         this.userapi.Favorites.push(this.thisFave);
         debugger;

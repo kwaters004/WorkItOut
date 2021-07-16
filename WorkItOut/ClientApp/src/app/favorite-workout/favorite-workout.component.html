@@ -1,13 +1,29 @@
 <div class="userFavorites">
-    <h1 class="hello">{{userapi.User?.firstname}} {{userapi.User?.lastname}}'s Favorite Workouts!</h1>
+	<h1 class="hello">{{userapi.User?.firstname}} {{userapi.User?.lastname}}'s Favorite Workouts!</h1>
 
-    <div class="favoriteWorkouts" *ngIf="!sh">
-        <div class="Favs">
-            Favorite Workouts
-        </div>
-        <div *ngFor ="let fav of userapi.favesList" >
-           {{fav?.workoutId}}
-        </div>
+	<div class="favoriteWorkouts" *ngIf="!sh">
 
-    </div>
+		<div *ngFor="let fav of userapi.favesList">
+
+			<h2>{{fav?.workoutname}}</h2>
+				<div class="workoutDetails">
+					<div class="detailTitle">Recommended Reps:</div>
+					<div>{{fav?.recommendedReps}}</div>
+					<div class="detailTitle">Recommended Sets:</div>
+					<div>{{fav?.recommendedSets}}</div>
+					<div class="detailTitle">Recommended Duration:</div>
+					<div>{{fav?.recommendedDuration}}</div>
+					<div class="detailTitle">Equipment:</div>
+					<div>{{fav?.equipment}}</div>
+					<div class="detailTitle">Category:</div>
+					<div>{{fav?.category}}</div>
+					<div class="detailTitle">Time Exercised:</div>
+					<div>{{fav?.timeExercised}}</div>
+					<div class="detailTitle">Muscle Groups:</div>
+					<div>{{fav?.musclegroups}}</div>
+				</div>
+
+		</div>
+
+	</div>
 </div>
