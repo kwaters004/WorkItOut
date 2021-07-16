@@ -47,12 +47,12 @@ export class WorkoutDetailComponent implements OnInit {
 
     ngOnInit() {
 
-        if (this.userapi.User) {
+        if (this.userapi.User && this.userapi.Favorites.length > 0) {
 
 
         this.CheckForFav();
         }
-        debugger;
+
 
 
 	}
@@ -103,9 +103,11 @@ export class WorkoutDetailComponent implements OnInit {
     }
 
     AddFavorite() {
-        debugger;
+        this.thisFave.userId = this.userapi.User.userId;
+        this.thisFave.workoutId = this.wrkout.workoutId;
         this.userapi.AddFavorite(this.wrkout.workoutId);
         this.userapi.Favorites.push(this.thisFave);
+        debugger;
         //this.route.navigateByUrl('/addlinktofavs');
     }
 

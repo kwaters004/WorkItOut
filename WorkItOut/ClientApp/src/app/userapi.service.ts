@@ -13,22 +13,25 @@ export class UserapiService {
 
 	joinDb = null;
 
+	// this is the list of workouts that are faves
+	favesList = [];
+	// this is the list of actual favorite objects
 	Favorites = [];
 
 	User = null;
 	userLogs = null;
 
 	//User = {
-	//	firstname: "",
-	//	lastname: "",
+	//	firstname: null,
+	//	lastname: null,
 	//	dob: null,
-	//	initialWeight: 0,
-	//	email: "",
-	//	userName: "",
-	//	height: 0,
-	//	gender: "",
+	//	initialWeight: null,
+	//	email: null,
+	//	userName: null,
+	//	height: null,
+	//	gender: null,
 	//	userId: null,
-	//	password: ""
+	//	password: null
 	//}
 
 
@@ -64,6 +67,7 @@ export class UserapiService {
 	clickLogin(user) {
 		
 		this.http.post<any>('user/isuser', user).subscribe(result => {
+			debugger;
 			this.User = result;
 			this.updateHeight();
 			this.updateAgeAndDOB();
@@ -72,7 +76,9 @@ export class UserapiService {
 
 
 		}, error => {
-			console.log(error);
+				this.route.navigateByUrl('/');
+				this.User.password = null;
+				console.log(error);
 		});
 	}
 
@@ -117,6 +123,7 @@ export class UserapiService {
 
 		this.http.post<any>('user/addFave', {workoutId: addFave, userId: this.User.userId }).subscribe(result => {
 			console.log(result);
+			this.createFavesList();
 
 		}, error => {
 			console.log(error);
@@ -126,6 +133,7 @@ export class UserapiService {
 	RemoveFavorite(id) {
 		this.http.delete<any>(`user/removeFave/${id}`).subscribe(result => {
 			console.log(result);
+			this.createFavesList();
 
 		}, error => {
 				console.log(error);
@@ -135,6 +143,8 @@ export class UserapiService {
 	GetFavorites() {
 		this.http.get<any>(`user/GetFavorites/${this.User.userId}`).subscribe(result => {
 			this.Favorites = result;
+			debugger;
+			this.createFavesList();
 
 		}, error => {
 			console.log(error);
@@ -237,6 +247,16 @@ export class UserapiService {
 		}, error => {
 			console.log(error);
 		});
+	}
+
+	createFavesList() {
+		for (let i = 0; i < this.workoutapi.workouts.length; i++) {
+			for (let n = 0; n < this.Favorites.length; n++) {
+				if (this.workoutapi.workouts[i].workoutId == this.Favorites[n].workoutId) {
+					this.favesList.push(this.workoutapi.workouts[i]);
+				}
+			}
+		}
 	}
 
 }

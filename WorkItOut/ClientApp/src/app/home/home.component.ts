@@ -16,18 +16,20 @@ export class HomeComponent implements OnInit {
 
 	user: any = {
 		email: "",
+		password: "",
 	}
-	checkingpassword: FormGroup;
+/*	checkingpassword: FormGroup;*/
 	passwordWarn = "";
 
 
 	constructor(
 		private workoutService: WorkoutapiService,
-		private userapi: UserapiService, private route: Router) {
+		private userapi: UserapiService, private route: Router,
+		private fb: FormBuilder	) {
 		
-		this.checkingpassword = fb.group([
-			'password' , [null, Validators.compose([Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/)])],
-		]);
+		//this.checkingpassword = fb.group([
+		//	'password' , [null, Validators.compose([Validators.required])],
+		//]);
 	}
 
 	ngOnInit() {
@@ -37,7 +39,8 @@ export class HomeComponent implements OnInit {
 	
 		
 		//this.userapi.clickLogin(this.user);
-		        this.loggedOut();
+		this.loggedOut();
+		this.user = this.userapi.User;
 	}
 
 	UserLogIn() {
@@ -45,8 +48,8 @@ export class HomeComponent implements OnInit {
     }
 
 	clickLogin() {
-        if (this.checkingpassword.value == "" || this.checkingpassword.invalid) {
-			this.passwordWarn = "password must be at least 8 characters long contain a number and an uppercase letter";
+        if (this.user.password == "") {
+			this.passwordWarn = "Please enter a password";
 			return;
         }
 		this.userapi.clickLogin(this.user);
@@ -58,7 +61,7 @@ export class HomeComponent implements OnInit {
 
 	loggedOut() {
 
-		if (this.userapi.User != null) {
+		if (this.userapi.User.password != null) {
 			this.route.navigateByUrl("/profile");
 		}
 	}
