@@ -1,19 +1,28 @@
+<style>
+.logHeader{
+	font-weight: bold;
+}
+</style>
 
-<div>
-Workout Name
+
+
+
+
+<div class="logHeader">
+Workout
 </div>
 
 
-<div>
+<div  class="logHeader">
 	Reps
 </div>
-<div>
+<div  class="logHeader">
 	Sets
 </div>
-<div>
+<div  class="logHeader">
 	How you felt
 </div>
-<div>
+<div  class="logHeader">
 	Date Completed
 </div>
 
@@ -36,7 +45,7 @@ Workout Name
 	{{dateStr}}
 </div>
 
-<div style="grid-column: span 4">
+<div style="grid-column: span 5">
 
-<button (click)="GoToLogPage()">Click Me</button>
+	<button (click)="GoToLogPage()" style="width: 90%; margin: auto; padding: .1rem;">Go To Log</button>
 </div>

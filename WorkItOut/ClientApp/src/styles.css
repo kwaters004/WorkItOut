@@ -141,7 +141,7 @@ app-user-profile{
 
 .editProfile{
 grid-row: 2;
-grid-column: 3;
+grid-column: 4;
 height: 15%;
 width: 20%;
 justify-self: end;
@@ -236,6 +236,7 @@ span {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     background-color: grey;
     margin: 10px;
+    grid-gap: .3rem;
     
 }
 
